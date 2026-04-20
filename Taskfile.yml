@@ -84,16 +84,12 @@ tasks:
       - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.CANDIDATE}} --dataset holdout --json > {{.REPORT_DIR}}/holdout.json"
 
   evolve:
-    desc: Run OpenEvolve (set OPENEVOLVE_PATH env var)
+    desc: Run full OpenEvolve mutation loop
     deps: [install]
-    preconditions:
-      - sh: test -n "{{.OPENEVOLVE_PATH}}"
-        msg: "Set OPENEVOLVE_PATH to the openevolve repo root"
     vars:
-      OPENEVOLVE_PATH: '{{.OPENEVOLVE_PATH | default ""}}'
       ITERATIONS: '{{.ITERATIONS | default "50"}}'
     cmds:
-      - "{{.VENV}}/bin/python {{.OPENEVOLVE_PATH}}/openevolve-run.py {{.PROGRAM}} {{.EVALUATOR}} --config {{.CONFIG}} --iterations {{.ITERATIONS}}"
+      - "{{.VENV}}/bin/openevolve-run {{.PROGRAM}} {{.EVALUATOR}} --config {{.CONFIG}} --iterations {{.ITERATIONS}}"
 
   clean:
     desc: Remove virtual environment and caches
