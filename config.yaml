@@ -9,10 +9,17 @@ diff_based_evolution: true
 max_code_length: 12000
 
 llm:
-  primary_model: "tinyllama"
-  primary_model_weight: 0.8
-  secondary_model: "gemma4:e2b"
-  secondary_model_weight: 0.2
+  models:
+    - name: "tinyllama"
+      weight: 1.0
+    # - name: "gemma4:e2b"
+    #   weight: 1.0
+    # - name: "gemma4:e4b"
+    #   weight: 1.0
+  # primary_model: "tinyllama"
+  # primary_model_weight: 0.8
+  # secondary_model: "gemma4:e2b"
+  # secondary_model_weight: 0.2
   api_base: "http://127.0.0.1:11434/v1"
   timeout: 600
   temperature: 0.6
@@ -24,7 +31,8 @@ evaluator:
 
 database:
   population_size: 80
-  num_islands: 3
+  # num_islands: 3
+  num_islands: 1
   migration_interval: 10
   feature_dimensions:
     - "combined_score"
