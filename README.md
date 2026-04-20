@@ -32,8 +32,7 @@ That makes the search space small enough for local models while keeping the eval
 
 ```text
 .
-├── .github/
-│   └── copilot-instructions.md
+├── AGENTS.md
 ├── docs/
 │   ├── DOD.md
 │   ├── REPORT_TEMPLATE.md
