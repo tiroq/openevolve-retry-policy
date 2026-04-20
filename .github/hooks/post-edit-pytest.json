@@ -1,0 +1,11 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "type": "command",
+        "command": "./scripts/post-edit-pytest.sh",
+        "timeout": 30
+      }
+    ]
+  }
+}
