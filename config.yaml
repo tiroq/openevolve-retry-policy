@@ -1,0 +1,30 @@
+# Minimal OpenEvolve configuration for local-model experimentation.
+# Adjust model names and api_base to your local stack.
+
+max_iterations: 50
+checkpoint_interval: 5
+random_seed: 42
+
+diff_based_evolution: true
+max_code_length: 12000
+
+llm:
+  primary_model: "tinyllama"
+  primary_model_weight: 0.8
+  secondary_model: "gemma4:e2b"
+  secondary_model_weight: 0.2
+  api_base: "http://192.168.1.200:11434/v1"
+  temperature: 0.6
+
+evaluator:
+  enable_artifacts: true
+  cascade_evaluation: false
+  use_llm_feedback: false
+
+database:
+  population_size: 80
+  num_islands: 3
+  migration_interval: 10
+  feature_dimensions:
+    - "combined_score"
+    - "avg_retry_count"
