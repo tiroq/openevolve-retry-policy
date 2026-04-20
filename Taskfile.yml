@@ -4,8 +4,10 @@ vars:
   PYTHON: python3
   VENV: .venv
   PROGRAM: initial_program.py
+  CANDIDATE: initial_program.py
   EVALUATOR: evaluator.py
   CONFIG: config.yaml
+  REPORT_DIR: reports
 
 tasks:
   default:
@@ -40,6 +42,14 @@ tasks:
     cmds:
       - "{{.VENV}}/bin/python -m pytest -v"
 
+  lint:
+    desc: Run syntax checks
+    deps: [install]
+    cmds:
+      - "{{.VENV}}/bin/python -m py_compile {{.PROGRAM}}"
+      - "{{.VENV}}/bin/python -m py_compile {{.EVALUATOR}}"
+      - "{{.VENV}}/bin/python -m py_compile scenarios.py"
+
   eval:train:
     desc: Evaluate policy on training scenarios
     deps: [install]
@@ -69,14 +79,6 @@ tasks:
       ITERATIONS: '{{.ITERATIONS | default "50"}}'
     cmds:
       - "{{.VENV}}/bin/python {{.OPENEVOLVE_PATH}}/openevolve-run.py {{.PROGRAM}} {{.EVALUATOR}} --config {{.CONFIG}} --iterations {{.ITERATIONS}}"
-
-  lint:
-    desc: Run basic Python syntax check
-    deps: [install]
-    cmds:
-      - "{{.VENV}}/bin/python -m py_compile {{.PROGRAM}}"
-      - "{{.VENV}}/bin/python -m py_compile {{.EVALUATOR}}"
-      - "{{.VENV}}/bin/python -m py_compile scenarios.py"
 
   clean:
     desc: Remove virtual environment and caches
