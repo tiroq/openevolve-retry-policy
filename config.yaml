@@ -12,6 +12,8 @@ llm:
   models:
     # - name: "tinyllama"
     #   weight: 1.0
+    # - name: "qwen2.5-coder:3b"
+    #   weight: 1.0
     - name: "gemma4:e2b"
       weight: 1.0
     # - name: "gemma4:e4b"
@@ -22,7 +24,7 @@ llm:
   # secondary_model_weight: 0.2
   api_base: "http://127.0.0.1:11434/v1"
   timeout: 600
-  temperature: 0.2
+  temperature: 0.15
 
 evaluator:
   enable_artifacts: true
