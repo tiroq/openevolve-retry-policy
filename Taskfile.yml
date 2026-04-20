@@ -1,0 +1,86 @@
+version: "3"
+
+vars:
+  PYTHON: python3
+  VENV: .venv
+  PROGRAM: initial_program.py
+  EVALUATOR: evaluator.py
+  CONFIG: config.yaml
+
+tasks:
+  default:
+    desc: List available tasks
+    cmds:
+      - task --list
+
+  venv:
+    desc: Create Python virtual environment
+    status:
+      - test -d {{.VENV}}
+    cmds:
+      - "{{.PYTHON}} -m venv {{.VENV}}"
+
+  install:
+    desc: Install dependencies
+    deps: [venv]
+    sources:
+      - requirements.txt
+    cmds:
+      - "{{.VENV}}/bin/pip install -r requirements.txt"
+
+  test:
+    desc: Run pytest suite
+    deps: [install]
+    cmds:
+      - "{{.VENV}}/bin/python -m pytest -q"
+
+  test:verbose:
+    desc: Run pytest with verbose output
+    deps: [install]
+    cmds:
+      - "{{.VENV}}/bin/python -m pytest -v"
+
+  eval:train:
+    desc: Evaluate policy on training scenarios
+    deps: [install]
+    cmds:
+      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.PROGRAM}} --dataset train --json"
+
+  eval:holdout:
+    desc: Evaluate policy on holdout scenarios
+    deps: [install]
+    cmds:
+      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.PROGRAM}} --dataset holdout --json"
+
+  eval:
+    desc: Evaluate policy on both train and holdout
+    cmds:
+      - task: eval:train
+      - task: eval:holdout
+
+  evolve:
+    desc: Run OpenEvolve (set OPENEVOLVE_PATH env var)
+    deps: [install]
+    preconditions:
+      - sh: test -n "{{.OPENEVOLVE_PATH}}"
+        msg: "Set OPENEVOLVE_PATH to the openevolve repo root (e.g. OPENEVOLVE_PATH=/path/to/openevolve task evolve)"
+    vars:
+      OPENEVOLVE_PATH: '{{.OPENEVOLVE_PATH | default ""}}'
+      ITERATIONS: '{{.ITERATIONS | default "50"}}'
+    cmds:
+      - "{{.VENV}}/bin/python {{.OPENEVOLVE_PATH}}/openevolve-run.py {{.PROGRAM}} {{.EVALUATOR}} --config {{.CONFIG}} --iterations {{.ITERATIONS}}"
+
+  lint:
+    desc: Run basic Python syntax check
+    deps: [install]
+    cmds:
+      - "{{.VENV}}/bin/python -m py_compile {{.PROGRAM}}"
+      - "{{.VENV}}/bin/python -m py_compile {{.EVALUATOR}}"
+      - "{{.VENV}}/bin/python -m py_compile scenarios.py"
+
+  clean:
+    desc: Remove virtual environment and caches
+    cmds:
+      - rm -rf {{.VENV}}
+      - find . -type d -name __pycache__ -exec rm -rf {} +
+      - find . -type d -name .pytest_cache -exec rm -rf {} +
