@@ -54,13 +54,13 @@ tasks:
     desc: Evaluate policy on training scenarios
     deps: [install]
     cmds:
-      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.PROGRAM}} --dataset train --json"
+      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.CANDIDATE}} --dataset train --json"
 
   eval:holdout:
     desc: Evaluate policy on holdout scenarios
     deps: [install]
     cmds:
-      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.PROGRAM}} --dataset holdout --json"
+      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.CANDIDATE}} --dataset holdout --json"
 
   eval:
     desc: Evaluate policy on both train and holdout
@@ -68,12 +68,27 @@ tasks:
       - task: eval:train
       - task: eval:holdout
 
+  smoke:
+    desc: Run lint, tests, and both evals
+    cmds:
+      - task: lint
+      - task: test
+      - task: eval
+
+  report:
+    desc: Save train and holdout evaluation reports
+    deps: [install]
+    cmds:
+      - mkdir -p {{.REPORT_DIR}}
+      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.CANDIDATE}} --dataset train --json > {{.REPORT_DIR}}/train.json"
+      - "{{.VENV}}/bin/python {{.EVALUATOR}} --program {{.CANDIDATE}} --dataset holdout --json > {{.REPORT_DIR}}/holdout.json"
+
   evolve:
     desc: Run OpenEvolve (set OPENEVOLVE_PATH env var)
     deps: [install]
     preconditions:
       - sh: test -n "{{.OPENEVOLVE_PATH}}"
-        msg: "Set OPENEVOLVE_PATH to the openevolve repo root (e.g. OPENEVOLVE_PATH=/path/to/openevolve task evolve)"
+        msg: "Set OPENEVOLVE_PATH to the openevolve repo root"
     vars:
       OPENEVOLVE_PATH: '{{.OPENEVOLVE_PATH | default ""}}'
       ITERATIONS: '{{.ITERATIONS | default "50"}}'
@@ -84,5 +99,6 @@ tasks:
     desc: Remove virtual environment and caches
     cmds:
       - rm -rf {{.VENV}}
+      - rm -rf {{.REPORT_DIR}}
       - find . -type d -name __pycache__ -exec rm -rf {} +
       - find . -type d -name .pytest_cache -exec rm -rf {} +
