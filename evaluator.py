@@ -156,6 +156,8 @@ def run_scenario(
             elapsed_ms += wait_ms
             retries += 1
             consecutive_failures += 1
+            if not scenario.is_idempotent and attempt >= 1:
+                dangerous_non_idempotent_retries += 1
             if scenario_would_succeed_with_switch(scenario):
                 good_switch += 1
                 return StepResult(
@@ -265,7 +267,20 @@ def evaluate(program_path: str) -> Dict[str, float]:
     OpenEvolve examples optimize `combined_score`. This function returns a metric
     dictionary in the same spirit.
     """
-    return evaluate_program(program_path=program_path, dataset="train").metrics
+    try:
+        return evaluate_program(program_path=program_path, dataset="train").metrics
+    except Exception:
+        return {
+            "runs_successfully": 0.0,
+            "success_rate": 0.0,
+            "avg_latency_ms": 999999.0,
+            "avg_retry_count": 999.0,
+            "dangerous_non_idempotent_retries": 999.0,
+            "useless_retries": 999.0,
+            "good_fail_fast_decisions": 0.0,
+            "good_endpoint_switches": 0.0,
+            "combined_score": -1e9,
+        }
 
 
 def main() -> int:
