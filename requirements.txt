@@ -1,2 +1,3 @@
 pytest>=8.2,<9
 PyYAML>=6.0,<7
+openevolve>=0.2.0
