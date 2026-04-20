@@ -10,10 +10,10 @@ max_code_length: 12000
 
 llm:
   models:
-    - name: "tinyllama"
-      weight: 1.0
-    # - name: "gemma4:e2b"
+    # - name: "tinyllama"
     #   weight: 1.0
+    - name: "gemma4:e2b"
+      weight: 1.0
     # - name: "gemma4:e4b"
     #   weight: 1.0
   # primary_model: "tinyllama"
@@ -22,7 +22,7 @@ llm:
   # secondary_model_weight: 0.2
   api_base: "http://127.0.0.1:11434/v1"
   timeout: 600
-  temperature: 0.6
+  temperature: 0.2
 
 evaluator:
   enable_artifacts: true
