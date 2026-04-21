@@ -1,0 +1,21 @@
+2026-04-21 21:55:15,758 - openevolve.controller - INFO - Logging to openevolve_output/logs/openevolve_20260421_215515.log
+2026-04-21 21:55:15,803 - openevolve.controller - INFO - Set random seed to 42 for reproducibility
+2026-04-21 21:55:15,887 - openevolve.llm.openai - INFO - Initialized OpenAI LLM with model: qwen3.6:35b-a3b
+2026-04-21 21:55:15,888 - openevolve.llm.ensemble - INFO - Initialized LLM ensemble with models: qwen3.6:35b-a3b (weight: 1.00)
+2026-04-21 21:55:15,903 - openevolve.prompt.sampler - INFO - Initialized prompt sampler
+2026-04-21 21:55:15,904 - openevolve.prompt.sampler - INFO - Set custom templates: system=evaluator_system_message, user=None
+2026-04-21 21:55:15,904 - openevolve.database - INFO - Initialized program database with 0 programs
+2026-04-21 21:55:15,915 - openevolve.evaluator - INFO - Successfully loaded evaluation function from evaluator.py
+2026-04-21 21:55:15,915 - openevolve.evaluator - INFO - Initialized evaluator with evaluator.py
+2026-04-21 21:55:15,915 - openevolve.controller - INFO - Initialized OpenEvolve with initial_program.py
+2026-04-21 21:55:15,915 - openevolve.controller - INFO - Adding initial program to database
+2026-04-21 21:55:15,921 - openevolve.evaluator - INFO - Evaluated program 4c444211-b955-454c-9f10-67773d1751e7 in 0.01s: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-21 21:55:15,922 - openevolve.database - INFO - New MAP-Elites cell occupied in island 0: {'combined_score': 5, 'avg_retry_count': 5}
+2026-04-21 21:55:15,938 - openevolve.process_parallel - INFO - Initialized process parallel controller with 1 workers
+2026-04-21 21:55:15,939 - openevolve.process_parallel - INFO - Set max None tasks per child
+2026-04-21 21:55:15,941 - openevolve.process_parallel - INFO - Started process pool with 1 processes
+2026-04-21 21:55:15,941 - openevolve.controller - INFO - Using island-based evolution with 1 islands
+2026-04-21 21:55:15,941 - openevolve.database - INFO - Island Status:
+2026-04-21 21:55:15,941 - openevolve.database - INFO -  * Island 0: 1 programs, best=-8.6781, avg=-8.6781, diversity=0.00, gen=0 (best: 4c444211-b955-454c-9f10-67773d1751e7)
+2026-04-21 21:55:15,941 - openevolve.process_parallel - INFO - Starting process-based evolution from iteration 1 for 50 iterations (total: 51)
+2026-04-21 21:55:15,954 - openevolve.process_parallel - INFO - Early stopping disabled
