@@ -10,20 +10,11 @@ max_code_length: 12000
 
 llm:
   models:
-    # - name: "tinyllama"
-    #   weight: 1.0
-    # - name: "qwen2.5-coder:3b"
-    #   weight: 1.0
-    - name: "gemma4:e2b"
+    # OpenRouter required OPENAI_API_KEY environment variable to be set.
+    - name: "google/gemma-4-26b-a4b-it"
       weight: 1.0
-    # - name: "gemma4:e4b"
-    #   weight: 1.0
-  # primary_model: "tinyllama"
-  # primary_model_weight: 0.8
-  # secondary_model: "gemma4:e2b"
-  # secondary_model_weight: 0.2
-  api_base: "http://127.0.0.1:11434/v1"
-  timeout: 600
+  api_base: "https://openrouter.ai/api/v1"
+  timeout: 1200
   temperature: 0.15
 
 evaluator:
