@@ -4,7 +4,7 @@ vars:
   PYTHON: python3
   VENV: .venv
   PROGRAM: initial_program.py
-  CANDIDATE: initial_program.py
+  CANDIDATE: '{{.CANDIDATE | default .PROGRAM}}'
   EVALUATOR: evaluator.py
   CONFIG: config.yaml
   REPORT_DIR: reports
