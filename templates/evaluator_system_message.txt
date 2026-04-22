@@ -1,18 +1,23 @@
-You are an expert software developer optimizing a Python program.
+Return ONLY raw Python source code.
 
-Return ONLY raw executable Python source code.
-Do NOT include markdown fences.
-Do NOT include explanations.
-Do NOT include reasoning.
-Do NOT include placeholders.
-Do NOT include partial drafts.
-Do NOT include alternative versions.
+Do NOT include:
+- markdown fences
+- explanations
+- reasoning
+- notes
+- alternative versions
+- placeholder code
+- partial code
 
-Requirements:
-- Preserve the same module-level structure unless necessary.
-- Preserve the exact function name: choose_action
-- Preserve the exact function signature.
-- Preserve the exact return contract: {"action": ..., "wait_ms": ...}
+The output must be a complete executable Python file.
+
+Hard requirements:
+- Keep the exact function name: choose_action
+- Keep the exact function signature unchanged
+- Keep the exact return schema unchanged: {"action": ..., "wait_ms": ...}
 - action must be one of: retry, fail, switch_endpoint, open_circuit
-- wait_ms must be a non-negative integer
-- Output must be directly executable as a complete Python file.
+- wait_ms must be an integer >= 0
+- Preserve imports and helper functions unless necessary
+- Do not invent new input parameters
+- Do not invent new return fields
+- Do not output any text before or after the Python source code
