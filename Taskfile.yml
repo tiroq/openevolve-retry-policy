@@ -91,6 +91,14 @@ tasks:
     cmds:
       - "{{.VENV}}/bin/openevolve-run {{.PROGRAM}} {{.EVALUATOR}} --config {{.CONFIG}} --iterations {{.ITERATIONS}}"
 
+  evolve:debug:
+    desc: Run full OpenEvolve mutation loop in debug mode
+    deps: [install]
+    vars:
+      ITERATIONS: '{{.ITERATIONS | default "50"}}'
+    cmds:
+      - "{{.VENV}}/bin/openevolve-run -l DEBUG {{.PROGRAM}} {{.EVALUATOR}} --config {{.CONFIG}} --iterations {{.ITERATIONS}}"
+
   clean:
     desc: Remove virtual environment and caches
     cmds:
