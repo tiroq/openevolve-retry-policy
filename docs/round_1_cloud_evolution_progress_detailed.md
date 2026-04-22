@@ -1,6 +1,7 @@
 # Retry Policy Evolution - Full Detailed History
 
 ## Sources Read First
+
 - openevolve_output/logs/openevolve_20260421_110550.log
 - openevolve_output/best/best_program.py
 - openevolve_output/best/best_program_info.json
@@ -10,18 +11,22 @@
 - initial_program.py
 
 ## Output Folder Inventory
+
 - Total files in openevolve_output: 318
 - Files in openevolve_output/best: 2
 - Files in openevolve_output/logs: 1
 
 ### best folder
+
 - best_program.py
 - best_program_info.json
 
 ### logs folder
+
 - openevolve_20260421_110550.log
 
 ### checkpoint program JSON counts
+
 - checkpoint_5: 6
 - checkpoint_10: 11
 - checkpoint_15: 16
@@ -36,7 +41,7 @@
 ## Full Iteration Timeline (1-50)
 
 | Iteration | Program ID | Parent ID | Duration(s) | combined_score | success_rate | avg_latency_ms | avg_retry_count | useless_retries | good_endpoint_switches |
-|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | 1 | 57e93334-be2b-455c-b98e-8bc43b90c6b7 | 61b091ad-3607-471b-acdd-ae0f6c285c27 | 20.23 | -2.3344 | 0.4375 | 1207.5000 | 2.0312 | 0.7188 | 0.0312 |
 | 2 | 4a61a3b5-54f7-4843-9ee4-d38a92f6c93e | 61b091ad-3607-471b-acdd-ae0f6c285c27 | 9.47 | -11.6406 | 0.4688 | 1421.8750 | 2.0938 | 1.2188 | 0.0625 |
 | 3 | e28a8b35-2562-4e57-a320-9d88ce94f2f3 | 57e93334-be2b-455c-b98e-8bc43b90c6b7 | 10.55 | -9.3250 | 0.4375 | 1357.1875 | 1.9062 | 1.0000 | 0.0312 |
@@ -89,6 +94,7 @@
 | 50 | 2160e87a-2f5c-4ed0-b9dc-8495da6d18af | 5296c8b6-e39d-4191-9595-da6fdc809e36 | 9.80 | 12.2844 | 0.4688 | 486.8750 | 2.0938 | 1.6875 | 0.1250 |
 
 ## Checkpoint Timeline
+
 - Iteration 5: openevolve_output/checkpoints/checkpoint_5
 - Iteration 10: openevolve_output/checkpoints/checkpoint_10
 - Iteration 15: openevolve_output/checkpoints/checkpoint_15
@@ -103,6 +109,7 @@
 ## Best Evolution Milestones (Step by Step)
 
 ### Step 1 - New Best at Iteration 1
+
 - Transition: 61b091ad-3607-471b-acdd-ae0f6c285c27 -> 57e93334-be2b-455c-b98e-8bc43b90c6b7
 - Score: -8.6781 -> -2.3344 (delta +6.3438)
 - Metrics before/after:
@@ -116,26 +123,27 @@
 --- 61b091ad
 +++ 57e93334
 @@ -26,9 +26,15 @@
-	if consecutive_failures >= 5:
-	    return {"action": "open_circuit", "wait_ms": 5_000}
+    if consecutive_failures >= 5:
+        return {"action": "open_circuit", "wait_ms": 5_000}
  
 +    if consecutive_failures >= 2 and error_type in {"bad_gateway", "timeout"}:
 +        return {"action": "switch_endpoint", "wait_ms": 0}
 +
-	if attempt >= 3:
-	    return {"action": "fail", "wait_ms": 0}
+    if attempt >= 3:
+        return {"action": "fail", "wait_ms": 0}
  
 +    if last_rtt_ms > 5_000:
 +        return {"action": "switch_endpoint", "wait_ms": 0}
 +
-	if error_type == "rate_limit":
-	    wait_ms = min(500 * (2 ** attempt), 8_000)
-	elif error_type == "server_busy":
+    if error_type == "rate_limit":
+        wait_ms = min(500 * (2 ** attempt), 8_000)
+    elif error_type == "server_busy":
 ```
 
 Explanation: The first improvement introduced conditional endpoint switching for repeated bad gateway/timeout and very high RTT. That immediately improved success_rate and reduced latency while preserving safety constraints.
 
 ### Step 2 - New Best at Iteration 5
+
 - Transition: 57e93334-be2b-455c-b98e-8bc43b90c6b7 -> b49caea0-f858-4a2c-9873-75d973cac79a
 - Score: -2.3344 -> 7.2594 (delta +9.5938)
 - Metrics before/after:
@@ -149,33 +157,33 @@ Explanation: The first improvement introduced conditional endpoint switching for
 --- 57e93334
 +++ b49caea0
 @@ -26,24 +26,23 @@
-	if consecutive_failures >= 5:
-	    return {"action": "open_circuit", "wait_ms": 5_000}
+    if consecutive_failures >= 5:
+        return {"action": "open_circuit", "wait_ms": 5_000}
  
 -    if consecutive_failures >= 2 and error_type in {"bad_gateway", "timeout"}:
 +    # Switch endpoint on critical network errors or high latency
 +    if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_500:
-	    return {"action": "switch_endpoint", "wait_ms": 0}
+        return {"action": "switch_endpoint", "wait_ms": 0}
  
 -    if attempt >= 3:
 +    if attempt >= 3 or elapsed_ms > 15_000:
-	    return {"action": "fail", "wait_ms": 0}
+        return {"action": "fail", "wait_ms": 0}
  
 -    if last_rtt_ms > 5_000:
 -        return {"action": "switch_endpoint", "wait_ms": 0}
 -
-	if error_type == "rate_limit":
+    if error_type == "rate_limit":
 -        wait_ms = min(500 * (2 ** attempt), 8_000)
 +        wait_ms = min(600 * (2 ** attempt), 8_000)
-	elif error_type == "server_busy":
+    elif error_type == "server_busy":
 -        wait_ms = min(250 * (2 ** attempt), 4_000)
 +        wait_ms = min(400 * (2 ** attempt), 4_000)
-	else:
+    else:
 -        wait_ms = min(100 * (2 ** attempt), 2_000)
 +        wait_ms = min(200 * (2 ** attempt), 2_500)
  
 +    # Add jitter/extra wait if RTT is creeping up
-	if last_rtt_ms > 2_000:
+    if last_rtt_ms > 2_000:
 -        wait_ms += 250
 +        wait_ms += 300
 ```
@@ -183,6 +191,7 @@ Explanation: The first improvement introduced conditional endpoint switching for
 Explanation: This step generalized endpoint switching and tuned waits, creating a major latency drop and a large fitness gain. It traded off higher useless retries for much better endpoint switch behavior and response time.
 
 ### Step 3 - New Best at Iteration 8
+
 - Transition: b49caea0-f858-4a2c-9873-75d973cac79a -> 39cfe3ca-9629-4338-823a-f0da63eeb97f
 - Score: 7.2594 -> 9.0969 (delta +1.8375)
 - Metrics before/after:
@@ -196,23 +205,23 @@ Explanation: This step generalized endpoint switching and tuned waits, creating 
 --- b49caea0
 +++ 39cfe3ca
 @@ -27,14 +27,19 @@
-	    return {"action": "open_circuit", "wait_ms": 5_000}
+        return {"action": "open_circuit", "wait_ms": 5_000}
  
-	# Switch endpoint on critical network errors or high latency
+    # Switch endpoint on critical network errors or high latency
 -    if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_500:
 +    if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_000:
-	    return {"action": "switch_endpoint", "wait_ms": 0}
+        return {"action": "switch_endpoint", "wait_ms": 0}
  
 -    if attempt >= 3 or elapsed_ms > 15_000:
 +    # Fail fast if total elapsed time is too high or max attempts reached
 +    if elapsed_ms > 15_000 or attempt >= 3:
-	    return {"action": "fail", "wait_ms": 0}
+        return {"action": "fail", "wait_ms": 0}
  
 +    # Switch endpoint if we hit congestion repeatedly
 +    if attempt >= 1 and error_type in {"server_busy", "rate_limit"} and consecutive_failures >= 2:
 +        return {"action": "switch_endpoint", "wait_ms": 0}
 +
-	if error_type == "rate_limit":
+    if error_type == "rate_limit":
 -        wait_ms = min(600 * (2 ** attempt), 8_000)
 +        wait_ms = min(800 * (2 ** attempt), 8_000)
 ```
@@ -220,6 +229,7 @@ Explanation: This step generalized endpoint switching and tuned waits, creating 
 Explanation: This refinement pushed earlier switching at high RTT and added repeated-congestion switching. It improved latency further without changing success_rate.
 
 ### Step 4 - New Best at Iteration 9
+
 - Transition: 39cfe3ca-9629-4338-823a-f0da63eeb97f -> 8e3390ac-14e3-4c36-9dda-1f18ffdd6b45
 - Score: 9.0969 -> 10.8781 (delta +1.7812)
 - Metrics before/after:
@@ -233,8 +243,8 @@ Explanation: This refinement pushed earlier switching at high RTT and added repe
 --- 39cfe3ca
 +++ 8e3390ac
 @@ -30,16 +30,15 @@
-	if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_000:
-	    return {"action": "switch_endpoint", "wait_ms": 0}
+    if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_000:
+        return {"action": "switch_endpoint", "wait_ms": 0}
  
 -    # Fail fast if total elapsed time is too high or max attempts reached
 -    if elapsed_ms > 15_000 or attempt >= 3:
@@ -242,13 +252,13 @@ Explanation: This refinement pushed earlier switching at high RTT and added repe
 -
 -    # Switch endpoint if we hit congestion repeatedly
 +    # Switch endpoint if we hit repeated congestion
-	if attempt >= 1 and error_type in {"server_busy", "rate_limit"} and consecutive_failures >= 2:
-	    return {"action": "switch_endpoint", "wait_ms": 0}
+    if attempt >= 1 and error_type in {"server_busy", "rate_limit"} and consecutive_failures >= 2:
+        return {"action": "switch_endpoint", "wait_ms": 0}
  
 +    if attempt >= 3 or elapsed_ms > 15_000:
 +        return {"action": "fail", "wait_ms": 0}
 +
-	if error_type == "rate_limit":
+    if error_type == "rate_limit":
 -        wait_ms = min(800 * (2 ** attempt), 8_000)
 +        wait_ms = min(600 * (2 ** attempt), 8_000)
 ```
@@ -256,6 +266,7 @@ Explanation: This refinement pushed earlier switching at high RTT and added repe
 Explanation: The key change was backing off rate-limit waits, which delivered a sharp latency reduction and higher combined score, while keeping success_rate stable.
 
 ### Step 5 - New Best at Iteration 41
+
 - Transition: 8e3390ac-14e3-4c36-9dda-1f18ffdd6b45 -> f77abb78-428e-46ac-9319-1fad1a862add
 - Score: 10.8781 -> 12.2844 (delta +1.4062)
 - Metrics before/after:
@@ -269,27 +280,27 @@ Explanation: The key change was backing off rate-limit waits, which delivered a 
 --- 8e3390ac
 +++ f77abb78
 @@ -26,19 +26,21 @@
-	if consecutive_failures >= 5:
-	    return {"action": "open_circuit", "wait_ms": 5_000}
+    if consecutive_failures >= 5:
+        return {"action": "open_circuit", "wait_ms": 5_000}
  
 -    # Switch endpoint on critical network errors or high latency
 +    # Switch endpoint on critical network errors or extreme latency
-	if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_000:
-	    return {"action": "switch_endpoint", "wait_ms": 0}
+    if error_type in {"bad_gateway", "timeout", "connection_reset", "temporary_disconnect"} or last_rtt_ms > 3_000:
+        return {"action": "switch_endpoint", "wait_ms": 0}
  
 -    # Switch endpoint if we hit repeated congestion
 -    if attempt >= 1 and error_type in {"server_busy", "rate_limit"} and consecutive_failures >= 2:
 +    # Switch endpoint if we hit repeated congestion or persistent rate limits
 +    if (attempt >= 1 and error_type in {"server_busy", "rate_limit"} and consecutive_failures >= 2) or \
 +       (error_type == "rate_limit" and attempt >= 2):
-	    return {"action": "switch_endpoint", "wait_ms": 0}
+        return {"action": "switch_endpoint", "wait_ms": 0}
  
 -    if attempt >= 3 or elapsed_ms > 15_000:
 +    # Fail fast if total elapsed time is too high or max attempts reached
 +    if elapsed_ms > 13_000 or attempt >= 3:
-	    return {"action": "fail", "wait_ms": 0}
+        return {"action": "fail", "wait_ms": 0}
  
-	if error_type == "rate_limit":
+    if error_type == "rate_limit":
 -        wait_ms = min(600 * (2 ** attempt), 8_000)
 +        wait_ms = min(500 * (2 ** attempt), 7_000)
 ```
