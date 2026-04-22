@@ -1,0 +1,518 @@
+2026-04-22 14:38:53,235 - openevolve.controller - INFO - Logging to openevolve_output/logs/openevolve_20260422_143853.log
+2026-04-22 14:38:53,283 - openevolve.controller - INFO - Set random seed to 42 for reproducibility
+2026-04-22 14:38:53,367 - openevolve.llm.openai - INFO - Initialized OpenAI LLM with model: qwen2.5-coder:0.5b
+2026-04-22 14:38:53,368 - openevolve.llm.ensemble - INFO - Initialized LLM ensemble with models: qwen2.5-coder:0.5b (weight: 1.00)
+2026-04-22 14:38:53,384 - openevolve.prompt.sampler - INFO - Initialized prompt sampler
+2026-04-22 14:38:53,385 - openevolve.prompt.sampler - INFO - Set custom templates: system=evaluator_system_message, user=None
+2026-04-22 14:38:53,385 - openevolve.database - INFO - Initialized program database with 0 programs
+2026-04-22 14:38:53,394 - openevolve.evaluator - INFO - Successfully loaded evaluation function from evaluator.py
+2026-04-22 14:38:53,394 - openevolve.evaluator - INFO - Initialized evaluator with evaluator.py
+2026-04-22 14:38:53,394 - openevolve.controller - INFO - Initialized OpenEvolve with initial_program.py
+2026-04-22 14:38:53,394 - openevolve.controller - INFO - Adding initial program to database
+2026-04-22 14:38:53,401 - openevolve.evaluator - INFO - Evaluated program d5f4a763-30f9-4bde-b3ac-243ddfb1ea51 in 0.01s: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:38:53,401 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 5, 'avg_retry_count': 5}
+2026-04-22 14:38:53,401 - openevolve.database - INFO - New MAP-Elites cell occupied in island 0: {'combined_score': 5, 'avg_retry_count': 5}
+2026-04-22 14:38:53,401 - openevolve.database - DEBUG - Set initial best program to d5f4a763-30f9-4bde-b3ac-243ddfb1ea51
+2026-04-22 14:38:53,401 - openevolve.database - DEBUG - Set initial best program for island 0 to d5f4a763-30f9-4bde-b3ac-243ddfb1ea51
+2026-04-22 14:38:53,401 - openevolve.database - DEBUG - Added program d5f4a763-30f9-4bde-b3ac-243ddfb1ea51 to island 0
+2026-04-22 14:38:53,417 - openevolve.process_parallel - INFO - Initialized process parallel controller with 1 workers
+2026-04-22 14:38:53,418 - openevolve.process_parallel - INFO - Set max None tasks per child
+2026-04-22 14:38:53,419 - openevolve.process_parallel - INFO - Started process pool with 1 processes
+2026-04-22 14:38:53,419 - openevolve.controller - INFO - Using island-based evolution with 1 islands
+2026-04-22 14:38:53,419 - openevolve.database - INFO - Island Status:
+2026-04-22 14:38:53,419 - openevolve.database - INFO -  * Island 0: 1 programs, best=-8.6781, avg=-8.6781, diversity=0.00, gen=0 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:38:53,419 - openevolve.process_parallel - INFO - Starting process-based evolution from iteration 1 for 50 iterations (total: 51)
+2026-04-22 14:38:53,419 - openevolve.database - DEBUG - Sampled parent d5f4a763-30f9-4bde-b3ac-243ddfb1ea51 and 0 inspirations from island 0 (mode: exploitation, rand_val: 0.639)
+2026-04-22 14:38:53,432 - openevolve.database - DEBUG - Sampled parent d5f4a763-30f9-4bde-b3ac-243ddfb1ea51 and 0 inspirations from island 0 (mode: exploitation, rand_val: 0.742)
+2026-04-22 14:38:53,434 - openevolve.process_parallel - INFO - Early stopping disabled
+2026-04-22 14:39:33,200 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 5, 'avg_retry_count': 5}
+2026-04-22 14:39:33,201 - openevolve.database - DEBUG - Added program 0e7a1461-4f2a-40ce-b04f-967eab0c0dad to island 0
+2026-04-22 14:39:33,201 - openevolve.database - DEBUG - Island 0 generation incremented to 1
+2026-04-22 14:39:33,201 - openevolve.process_parallel - INFO - Iteration 1: Program 0e7a1461-4f2a-40ce-b04f-967eab0c0dad (parent: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51) completed in 38.88s
+2026-04-22 14:39:33,201 - openevolve.process_parallel - INFO - Metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:39:33,202 - openevolve.database - DEBUG - Sampled parent d5f4a763-30f9-4bde-b3ac-243ddfb1ea51 and 1 inspirations from island 0 (mode: exploitation, rand_val: 0.223)
+2026-04-22 14:40:00,682 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 5, 'avg_retry_count': 5}
+2026-04-22 14:40:00,683 - openevolve.database - DEBUG - Added program 3b54e9b1-89b3-4049-8490-8d6fb55722e4 to island 0
+2026-04-22 14:40:00,683 - openevolve.database - DEBUG - Island 0 generation incremented to 2
+2026-04-22 14:40:00,683 - openevolve.process_parallel - INFO - Iteration 2: Program 3b54e9b1-89b3-4049-8490-8d6fb55722e4 (parent: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51) completed in 27.49s
+2026-04-22 14:40:00,683 - openevolve.process_parallel - INFO - Metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:40:00,683 - openevolve.database - DEBUG - Sampled parent 3b54e9b1-89b3-4049-8490-8d6fb55722e4 and 2 inspirations from island 0 (mode: exploitation, rand_val: 0.677)
+2026-04-22 14:40:48,650 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 5, 'avg_retry_count': 5}
+2026-04-22 14:40:48,651 - openevolve.database - DEBUG - Added program d26074e5-f4eb-4614-8bd1-812d7d60dadc to island 0
+2026-04-22 14:40:48,651 - openevolve.database - DEBUG - Island 0 generation incremented to 3
+2026-04-22 14:40:48,651 - openevolve.process_parallel - INFO - Iteration 3: Program d26074e5-f4eb-4614-8bd1-812d7d60dadc (parent: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51) completed in 47.96s
+2026-04-22 14:40:48,651 - openevolve.process_parallel - INFO - Metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:40:48,652 - openevolve.database - DEBUG - Sampled parent d26074e5-f4eb-4614-8bd1-812d7d60dadc and 3 inspirations from island 0 (mode: exploration, rand_val: 0.087)
+2026-04-22 14:41:41,985 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:41:41,986 - openevolve.database - INFO - New MAP-Elites cell occupied in island 0: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:41:41,986 - openevolve.database - DEBUG - Added program 25f78483-1bfc-46d6-8140-91705daddaaf to island 0
+2026-04-22 14:41:41,986 - openevolve.database - DEBUG - Island 0 generation incremented to 4
+2026-04-22 14:41:41,986 - openevolve.process_parallel - INFO - Iteration 4: Program 25f78483-1bfc-46d6-8140-91705daddaaf (parent: 3b54e9b1-89b3-4049-8490-8d6fb55722e4) completed in 53.34s
+2026-04-22 14:41:41,986 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:41:41,986 - openevolve.database - DEBUG - Sampled parent 25f78483-1bfc-46d6-8140-91705daddaaf and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.219)
+2026-04-22 14:42:27,938 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:42:27,939 - openevolve.database - DEBUG - Added program eb57661f-a930-4c70-a108-be0fe5df979f to island 0
+2026-04-22 14:42:27,939 - openevolve.database - DEBUG - Island 0 generation incremented to 5
+2026-04-22 14:42:27,939 - openevolve.process_parallel - INFO - Iteration 5: Program eb57661f-a930-4c70-a108-be0fe5df979f (parent: d26074e5-f4eb-4614-8bd1-812d7d60dadc) completed in 45.94s
+2026-04-22 14:42:27,939 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:42:27,939 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 5
+2026-04-22 14:42:27,940 - openevolve.database - INFO - Island Status:
+2026-04-22 14:42:27,942 - openevolve.database - INFO -  * Island 0: 6 programs, best=-8.6781, avg=-333333339.1188, diversity=90.13, gen=5 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:42:27,951 - openevolve.database - INFO - Saved database with 6 programs to openevolve_output/checkpoints/checkpoint_5
+2026-04-22 14:42:27,952 - openevolve.controller - INFO - Saved best program at checkpoint 5 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:42:27,952 - openevolve.controller - INFO - Saved checkpoint at iteration 5 to openevolve_output/checkpoints/checkpoint_5
+2026-04-22 14:42:27,952 - openevolve.database - DEBUG - Sampled parent 25f78483-1bfc-46d6-8140-91705daddaaf and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.716)
+2026-04-22 14:43:24,560 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:43:24,562 - openevolve.database - DEBUG - Added program d6f5c4ae-89df-4d11-ba79-97b2837fd917 to island 0
+2026-04-22 14:43:24,562 - openevolve.database - DEBUG - Island 0 generation incremented to 6
+2026-04-22 14:43:24,562 - openevolve.process_parallel - INFO - Iteration 6: Program d6f5c4ae-89df-4d11-ba79-97b2837fd917 (parent: 25f78483-1bfc-46d6-8140-91705daddaaf) completed in 56.63s
+2026-04-22 14:43:24,562 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:43:24,562 - openevolve.database - DEBUG - Sampled parent 0e7a1461-4f2a-40ce-b04f-967eab0c0dad and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.449)
+2026-04-22 14:44:19,288 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:44:19,290 - openevolve.database - DEBUG - Added program 04c36e07-cf8f-4c3b-9369-0f3903e77096 to island 0
+2026-04-22 14:44:19,290 - openevolve.database - DEBUG - Island 0 generation incremented to 7
+2026-04-22 14:44:19,290 - openevolve.process_parallel - INFO - Iteration 7: Program 04c36e07-cf8f-4c3b-9369-0f3903e77096 (parent: 25f78483-1bfc-46d6-8140-91705daddaaf) completed in 54.72s
+2026-04-22 14:44:19,290 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:44:19,290 - openevolve.database - DEBUG - Sampled parent 0e7a1461-4f2a-40ce-b04f-967eab0c0dad and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.340)
+2026-04-22 14:45:14,126 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:45:14,127 - openevolve.database - DEBUG - Added program 3f50da5e-0005-4a09-ad4f-b33f31ddbaba to island 0
+2026-04-22 14:45:14,127 - openevolve.database - DEBUG - Island 0 generation incremented to 8
+2026-04-22 14:45:14,127 - openevolve.process_parallel - INFO - Iteration 8: Program 3f50da5e-0005-4a09-ad4f-b33f31ddbaba (parent: 0e7a1461-4f2a-40ce-b04f-967eab0c0dad) completed in 54.84s
+2026-04-22 14:45:14,127 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:45:14,127 - openevolve.database - DEBUG - Sampled parent 3b54e9b1-89b3-4049-8490-8d6fb55722e4 and 3 inspirations from island 0 (mode: exploration, rand_val: 0.093)
+2026-04-22 14:46:01,115 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:46:01,116 - openevolve.database - DEBUG - Added program 51c7712f-eb2c-432b-9c62-25475509948d to island 0
+2026-04-22 14:46:01,116 - openevolve.database - DEBUG - Island 0 generation incremented to 9
+2026-04-22 14:46:01,116 - openevolve.process_parallel - INFO - Iteration 9: Program 51c7712f-eb2c-432b-9c62-25475509948d (parent: 0e7a1461-4f2a-40ce-b04f-967eab0c0dad) completed in 46.99s
+2026-04-22 14:46:01,116 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:46:01,116 - openevolve.database - DEBUG - Sampled parent d26074e5-f4eb-4614-8bd1-812d7d60dadc and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.604)
+2026-04-22 14:46:59,894 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:46:59,896 - openevolve.database - DEBUG - Added program 1456f791-3001-4de3-b075-2b1131d8c86c to island 0
+2026-04-22 14:46:59,896 - openevolve.database - DEBUG - Island 0 generation incremented to 10
+2026-04-22 14:46:59,896 - openevolve.process_parallel - INFO - Performing migration at iteration 10
+2026-04-22 14:46:59,897 - openevolve.database - INFO - Island Status:
+2026-04-22 14:46:59,897 - openevolve.database - INFO -  * Island 0: 11 programs, best=-8.6781, avg=-636363639.5193, diversity=135.87, gen=10 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:46:59,897 - openevolve.process_parallel - INFO - Iteration 10: Program 1456f791-3001-4de3-b075-2b1131d8c86c (parent: 3b54e9b1-89b3-4049-8490-8d6fb55722e4) completed in 58.78s
+2026-04-22 14:46:59,897 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:46:59,897 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 10
+2026-04-22 14:46:59,897 - openevolve.database - INFO - Island Status:
+2026-04-22 14:46:59,898 - openevolve.database - INFO -  * Island 0: 11 programs, best=-8.6781, avg=-636363639.5193, diversity=135.87, gen=10 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:46:59,903 - openevolve.database - INFO - Saved database with 11 programs to openevolve_output/checkpoints/checkpoint_10
+2026-04-22 14:46:59,903 - openevolve.controller - INFO - Saved best program at checkpoint 10 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:46:59,903 - openevolve.controller - INFO - Saved checkpoint at iteration 10 to openevolve_output/checkpoints/checkpoint_10
+2026-04-22 14:46:59,904 - openevolve.database - DEBUG - Sampled parent 0e7a1461-4f2a-40ce-b04f-967eab0c0dad and 3 inspirations from island 0 (mode: exploration, rand_val: 0.079)
+2026-04-22 14:47:55,665 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:47:55,666 - openevolve.database - DEBUG - Added program 250681ae-1c09-46be-9377-8633b0498c8a to island 0
+2026-04-22 14:47:55,666 - openevolve.database - DEBUG - Island 0 generation incremented to 11
+2026-04-22 14:47:55,667 - openevolve.process_parallel - INFO - Performing migration at iteration 11
+2026-04-22 14:47:55,667 - openevolve.database - INFO - Island Status:
+2026-04-22 14:47:55,667 - openevolve.database - INFO -  * Island 0: 12 programs, best=-8.6781, avg=-666666669.5594, diversity=106.65, gen=11 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:47:55,667 - openevolve.process_parallel - INFO - Iteration 11: Program 250681ae-1c09-46be-9377-8633b0498c8a (parent: d26074e5-f4eb-4614-8bd1-812d7d60dadc) completed in 55.76s
+2026-04-22 14:47:55,667 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:47:55,668 - openevolve.database - DEBUG - Sampled parent d26074e5-f4eb-4614-8bd1-812d7d60dadc and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.705)
+2026-04-22 14:48:49,093 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:48:49,095 - openevolve.database - DEBUG - Added program 60cea97c-e482-4213-835f-8846c9ee6ce5 to island 0
+2026-04-22 14:48:49,095 - openevolve.database - DEBUG - Island 0 generation incremented to 12
+2026-04-22 14:48:49,095 - openevolve.process_parallel - INFO - Performing migration at iteration 12
+2026-04-22 14:48:49,096 - openevolve.database - INFO - Island Status:
+2026-04-22 14:48:49,096 - openevolve.database - INFO -  * Island 0: 13 programs, best=-8.6781, avg=-692307694.9779, diversity=106.65, gen=12 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:48:49,096 - openevolve.process_parallel - INFO - Iteration 12: Program 60cea97c-e482-4213-835f-8846c9ee6ce5 (parent: 0e7a1461-4f2a-40ce-b04f-967eab0c0dad) completed in 53.44s
+2026-04-22 14:48:49,096 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:48:49,097 - openevolve.database - DEBUG - Sampled parent 25f78483-1bfc-46d6-8140-91705daddaaf and 3 inspirations from island 0 (mode: weighted, rand_val: 0.985)
+2026-04-22 14:49:43,302 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:49:43,303 - openevolve.database - DEBUG - Added program b12a2dd3-c7ef-4575-a71b-8021520fec32 to island 0
+2026-04-22 14:49:43,304 - openevolve.database - DEBUG - Island 0 generation incremented to 13
+2026-04-22 14:49:43,304 - openevolve.process_parallel - INFO - Performing migration at iteration 13
+2026-04-22 14:49:43,304 - openevolve.database - INFO - Island Status:
+2026-04-22 14:49:43,304 - openevolve.database - INFO -  * Island 0: 14 programs, best=-8.6781, avg=-714285716.7652, diversity=106.65, gen=13 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:49:43,304 - openevolve.process_parallel - INFO - Iteration 13: Program b12a2dd3-c7ef-4575-a71b-8021520fec32 (parent: d26074e5-f4eb-4614-8bd1-812d7d60dadc) completed in 54.21s
+2026-04-22 14:49:43,304 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:49:43,305 - openevolve.database - DEBUG - Sampled parent b12a2dd3-c7ef-4575-a71b-8021520fec32 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.453)
+2026-04-22 14:50:38,020 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:50:38,020 - openevolve.database - DEBUG - Added program 9037a17d-c907-4849-8360-de06c910fb90 to island 0
+2026-04-22 14:50:38,020 - openevolve.database - DEBUG - Island 0 generation incremented to 14
+2026-04-22 14:50:38,020 - openevolve.process_parallel - INFO - Performing migration at iteration 14
+2026-04-22 14:50:38,021 - openevolve.database - INFO - Island Status:
+2026-04-22 14:50:38,021 - openevolve.database - INFO -  * Island 0: 15 programs, best=-8.6781, avg=-733333335.6475, diversity=106.65, gen=14 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:50:38,021 - openevolve.process_parallel - INFO - Iteration 14: Program 9037a17d-c907-4849-8360-de06c910fb90 (parent: 25f78483-1bfc-46d6-8140-91705daddaaf) completed in 54.71s
+2026-04-22 14:50:38,021 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:50:38,021 - openevolve.database - DEBUG - Sampled parent 9037a17d-c907-4849-8360-de06c910fb90 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.355)
+2026-04-22 14:51:31,201 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:51:31,202 - openevolve.database - DEBUG - Added program 537a5b98-244b-448b-ab3e-cae69af34f06 to island 0
+2026-04-22 14:51:31,202 - openevolve.database - DEBUG - Island 0 generation incremented to 15
+2026-04-22 14:51:31,202 - openevolve.process_parallel - INFO - Performing migration at iteration 15
+2026-04-22 14:51:31,203 - openevolve.database - INFO - Island Status:
+2026-04-22 14:51:31,203 - openevolve.database - INFO -  * Island 0: 16 programs, best=-8.6781, avg=-750000002.1695, diversity=106.65, gen=15 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:51:31,203 - openevolve.process_parallel - INFO - Iteration 15: Program 537a5b98-244b-448b-ab3e-cae69af34f06 (parent: b12a2dd3-c7ef-4575-a71b-8021520fec32) completed in 53.18s
+2026-04-22 14:51:31,203 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:51:31,203 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 15
+2026-04-22 14:51:31,204 - openevolve.database - INFO - Island Status:
+2026-04-22 14:51:31,204 - openevolve.database - INFO -  * Island 0: 16 programs, best=-8.6781, avg=-750000002.1695, diversity=106.65, gen=15 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:51:31,212 - openevolve.database - INFO - Saved database with 16 programs to openevolve_output/checkpoints/checkpoint_15
+2026-04-22 14:51:31,213 - openevolve.controller - INFO - Saved best program at checkpoint 15 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:51:31,213 - openevolve.controller - INFO - Saved checkpoint at iteration 15 to openevolve_output/checkpoints/checkpoint_15
+2026-04-22 14:51:31,213 - openevolve.database - DEBUG - Sampled parent 3f50da5e-0005-4a09-ad4f-b33f31ddbaba and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.648)
+2026-04-22 14:52:27,553 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:52:27,554 - openevolve.database - DEBUG - Added program a0ae7a19-76c0-4c3c-b758-25f1c11c1550 to island 0
+2026-04-22 14:52:27,554 - openevolve.database - DEBUG - Island 0 generation incremented to 16
+2026-04-22 14:52:27,554 - openevolve.process_parallel - INFO - Performing migration at iteration 16
+2026-04-22 14:52:27,555 - openevolve.database - INFO - Island Status:
+2026-04-22 14:52:27,555 - openevolve.database - INFO -  * Island 0: 17 programs, best=-8.6781, avg=-764705884.3949, diversity=106.65, gen=16 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:52:27,555 - openevolve.process_parallel - INFO - Iteration 16: Program a0ae7a19-76c0-4c3c-b758-25f1c11c1550 (parent: 9037a17d-c907-4849-8360-de06c910fb90) completed in 56.35s
+2026-04-22 14:52:27,555 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:52:27,555 - openevolve.database - DEBUG - Sampled parent 25f78483-1bfc-46d6-8140-91705daddaaf and 3 inspirations from island 0 (mode: exploration, rand_val: 0.163)
+2026-04-22 14:53:28,865 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:53:28,866 - openevolve.database - DEBUG - Added program ae6fe788-b892-4105-b5c7-24fff7e2c908 to island 0
+2026-04-22 14:53:28,866 - openevolve.database - DEBUG - Island 0 generation incremented to 17
+2026-04-22 14:53:28,866 - openevolve.process_parallel - INFO - Performing migration at iteration 17
+2026-04-22 14:53:28,867 - openevolve.database - INFO - Island Status:
+2026-04-22 14:53:28,867 - openevolve.database - INFO -  * Island 0: 18 programs, best=-8.6781, avg=-777777779.7062, diversity=106.65, gen=17 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:53:28,867 - openevolve.process_parallel - INFO - Iteration 17: Program ae6fe788-b892-4105-b5c7-24fff7e2c908 (parent: 3f50da5e-0005-4a09-ad4f-b33f31ddbaba) completed in 61.30s
+2026-04-22 14:53:28,867 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:53:28,867 - openevolve.database - DEBUG - Sampled parent eb57661f-a930-4c70-a108-be0fe5df979f and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.688)
+2026-04-22 14:54:22,753 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:54:22,755 - openevolve.database - DEBUG - Added program 072e09a9-02e7-4ccb-a2ad-213798cceb54 to island 0
+2026-04-22 14:54:22,755 - openevolve.database - DEBUG - Island 0 generation incremented to 18
+2026-04-22 14:54:22,755 - openevolve.process_parallel - INFO - Performing migration at iteration 18
+2026-04-22 14:54:22,756 - openevolve.database - INFO - Island Status:
+2026-04-22 14:54:22,756 - openevolve.database - INFO -  * Island 0: 19 programs, best=-8.6781, avg=-789473686.0375, diversity=120.57, gen=18 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:54:22,756 - openevolve.process_parallel - INFO - Iteration 18: Program 072e09a9-02e7-4ccb-a2ad-213798cceb54 (parent: 25f78483-1bfc-46d6-8140-91705daddaaf) completed in 53.88s
+2026-04-22 14:54:22,756 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:54:22,756 - openevolve.database - DEBUG - Sampled parent 537a5b98-244b-448b-ab3e-cae69af34f06 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.822)
+2026-04-22 14:55:04,331 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:55:04,332 - openevolve.database - DEBUG - Added program a7dc602b-660c-4669-a32a-15e3e6b43454 to island 0
+2026-04-22 14:55:04,333 - openevolve.database - DEBUG - Island 0 generation incremented to 19
+2026-04-22 14:55:04,333 - openevolve.process_parallel - INFO - Performing migration at iteration 19
+2026-04-22 14:55:04,334 - openevolve.database - INFO - Island Status:
+2026-04-22 14:55:04,334 - openevolve.database - INFO -  * Island 0: 20 programs, best=-8.6781, avg=-800000001.7356, diversity=120.57, gen=19 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:55:04,334 - openevolve.process_parallel - INFO - Iteration 19: Program a7dc602b-660c-4669-a32a-15e3e6b43454 (parent: eb57661f-a930-4c70-a108-be0fe5df979f) completed in 41.58s
+2026-04-22 14:55:04,334 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:55:04,334 - openevolve.database - DEBUG - Sampled parent d5f4a763-30f9-4bde-b3ac-243ddfb1ea51 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.211)
+2026-04-22 14:56:05,181 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:56:05,182 - openevolve.database - DEBUG - Added program d4624d0a-9616-4338-987e-719afc089a2d to island 0
+2026-04-22 14:56:05,182 - openevolve.database - DEBUG - Island 0 generation incremented to 20
+2026-04-22 14:56:05,182 - openevolve.process_parallel - INFO - Performing migration at iteration 20
+2026-04-22 14:56:05,183 - openevolve.database - INFO - Island Status:
+2026-04-22 14:56:05,183 - openevolve.database - INFO -  * Island 0: 21 programs, best=-8.6781, avg=-809523811.1768, diversity=120.57, gen=20 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:56:05,183 - openevolve.process_parallel - INFO - Iteration 20: Program d4624d0a-9616-4338-987e-719afc089a2d (parent: 537a5b98-244b-448b-ab3e-cae69af34f06) completed in 60.85s
+2026-04-22 14:56:05,183 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:56:05,183 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 20
+2026-04-22 14:56:05,184 - openevolve.database - INFO - Island Status:
+2026-04-22 14:56:05,184 - openevolve.database - INFO -  * Island 0: 21 programs, best=-8.6781, avg=-809523811.1768, diversity=120.57, gen=20 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:56:05,193 - openevolve.database - INFO - Saved database with 21 programs to openevolve_output/checkpoints/checkpoint_20
+2026-04-22 14:56:05,193 - openevolve.controller - INFO - Saved best program at checkpoint 20 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 14:56:05,193 - openevolve.controller - INFO - Saved checkpoint at iteration 20 to openevolve_output/checkpoints/checkpoint_20
+2026-04-22 14:56:05,194 - openevolve.database - DEBUG - Sampled parent ae6fe788-b892-4105-b5c7-24fff7e2c908 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.396)
+2026-04-22 14:57:06,125 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:57:06,126 - openevolve.database - DEBUG - Added program bf531faf-e31a-42c8-bffc-024526dd148c to island 0
+2026-04-22 14:57:06,126 - openevolve.database - DEBUG - Island 0 generation incremented to 21
+2026-04-22 14:57:06,127 - openevolve.process_parallel - INFO - Performing migration at iteration 21
+2026-04-22 14:57:06,127 - openevolve.database - INFO - Island Status:
+2026-04-22 14:57:06,127 - openevolve.database - INFO -  * Island 0: 22 programs, best=-8.6781, avg=-818181819.7597, diversity=120.57, gen=21 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:57:06,127 - openevolve.process_parallel - INFO - Iteration 21: Program bf531faf-e31a-42c8-bffc-024526dd148c (parent: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51) completed in 60.94s
+2026-04-22 14:57:06,127 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:57:06,128 - openevolve.database - DEBUG - Sampled parent 250681ae-1c09-46be-9377-8633b0498c8a and 3 inspirations from island 0 (mode: exploration, rand_val: 0.140)
+2026-04-22 14:58:07,051 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:58:07,053 - openevolve.database - DEBUG - Added program 4d8e654f-3847-4262-b2c2-1d3ce8eeb940 to island 0
+2026-04-22 14:58:07,053 - openevolve.database - DEBUG - Island 0 generation incremented to 22
+2026-04-22 14:58:07,053 - openevolve.process_parallel - INFO - Performing migration at iteration 22
+2026-04-22 14:58:07,054 - openevolve.database - INFO - Island Status:
+2026-04-22 14:58:07,054 - openevolve.database - INFO -  * Island 0: 23 programs, best=-8.6781, avg=-826086958.0310, diversity=120.57, gen=22 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:58:07,054 - openevolve.process_parallel - INFO - Iteration 22: Program 4d8e654f-3847-4262-b2c2-1d3ce8eeb940 (parent: ae6fe788-b892-4105-b5c7-24fff7e2c908) completed in 60.92s
+2026-04-22 14:58:07,054 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:58:07,055 - openevolve.database - DEBUG - Sampled parent 250681ae-1c09-46be-9377-8633b0498c8a and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.428)
+2026-04-22 14:58:59,564 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:58:59,565 - openevolve.database - DEBUG - Added program 8e28e0dd-c999-4455-b5e2-701e9073dae9 to island 0
+2026-04-22 14:58:59,565 - openevolve.database - DEBUG - Island 0 generation incremented to 23
+2026-04-22 14:58:59,566 - openevolve.process_parallel - INFO - Performing migration at iteration 23
+2026-04-22 14:58:59,566 - openevolve.database - INFO - Island Status:
+2026-04-22 14:58:59,566 - openevolve.database - INFO -  * Island 0: 24 programs, best=-8.6781, avg=-833333334.7797, diversity=120.57, gen=23 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:58:59,566 - openevolve.process_parallel - INFO - Iteration 23: Program 8e28e0dd-c999-4455-b5e2-701e9073dae9 (parent: 250681ae-1c09-46be-9377-8633b0498c8a) completed in 52.52s
+2026-04-22 14:58:59,566 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:58:59,567 - openevolve.database - DEBUG - Sampled parent 51c7712f-eb2c-432b-9c62-25475509948d and 3 inspirations from island 0 (mode: weighted, rand_val: 0.997)
+2026-04-22 14:59:53,353 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 14:59:53,354 - openevolve.database - DEBUG - Added program a1f201d2-58f1-44ba-aa6a-9ce18d7f1c2a to island 0
+2026-04-22 14:59:53,354 - openevolve.database - DEBUG - Island 0 generation incremented to 24
+2026-04-22 14:59:53,354 - openevolve.process_parallel - INFO - Performing migration at iteration 24
+2026-04-22 14:59:53,354 - openevolve.database - INFO - Island Status:
+2026-04-22 14:59:53,355 - openevolve.database - INFO -  * Island 0: 25 programs, best=-8.6781, avg=-840000001.3885, diversity=120.57, gen=24 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 14:59:53,355 - openevolve.process_parallel - INFO - Iteration 24: Program a1f201d2-58f1-44ba-aa6a-9ce18d7f1c2a (parent: 250681ae-1c09-46be-9377-8633b0498c8a) completed in 53.79s
+2026-04-22 14:59:53,355 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 14:59:53,355 - openevolve.database - DEBUG - Sampled parent 8e28e0dd-c999-4455-b5e2-701e9073dae9 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.861)
+2026-04-22 15:00:38,977 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:00:38,978 - openevolve.database - DEBUG - Added program c092fae6-be4e-467f-a43a-d31b1dcac911 to island 0
+2026-04-22 15:00:38,978 - openevolve.database - DEBUG - Island 0 generation incremented to 25
+2026-04-22 15:00:38,979 - openevolve.process_parallel - INFO - Performing migration at iteration 25
+2026-04-22 15:00:38,979 - openevolve.database - INFO - Island Status:
+2026-04-22 15:00:38,979 - openevolve.database - INFO -  * Island 0: 26 programs, best=-8.6781, avg=-846153847.4889, diversity=120.57, gen=25 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:00:38,979 - openevolve.process_parallel - INFO - Iteration 25: Program c092fae6-be4e-467f-a43a-d31b1dcac911 (parent: 51c7712f-eb2c-432b-9c62-25475509948d) completed in 45.62s
+2026-04-22 15:00:38,979 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:00:38,979 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 25
+2026-04-22 15:00:38,980 - openevolve.database - INFO - Island Status:
+2026-04-22 15:00:38,980 - openevolve.database - INFO -  * Island 0: 26 programs, best=-8.6781, avg=-846153847.4889, diversity=120.57, gen=25 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:00:38,993 - openevolve.database - INFO - Saved database with 26 programs to openevolve_output/checkpoints/checkpoint_25
+2026-04-22 15:00:38,994 - openevolve.controller - INFO - Saved best program at checkpoint 25 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:00:38,994 - openevolve.controller - INFO - Saved checkpoint at iteration 25 to openevolve_output/checkpoints/checkpoint_25
+2026-04-22 15:00:38,994 - openevolve.database - DEBUG - Sampled parent 04c36e07-cf8f-4c3b-9369-0f3903e77096 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.422)
+2026-04-22 15:01:31,800 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:01:31,801 - openevolve.database - DEBUG - Added program 0d2e0664-9009-46df-be3b-8740358023f1 to island 0
+2026-04-22 15:01:31,801 - openevolve.database - DEBUG - Island 0 generation incremented to 26
+2026-04-22 15:01:31,802 - openevolve.process_parallel - INFO - Performing migration at iteration 26
+2026-04-22 15:01:31,802 - openevolve.database - INFO - Island Status:
+2026-04-22 15:01:31,802 - openevolve.database - INFO -  * Island 0: 27 programs, best=-8.6781, avg=-851851853.1375, diversity=109.12, gen=26 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:01:31,803 - openevolve.process_parallel - INFO - Iteration 26: Program 0d2e0664-9009-46df-be3b-8740358023f1 (parent: 8e28e0dd-c999-4455-b5e2-701e9073dae9) completed in 52.83s
+2026-04-22 15:01:31,803 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:01:31,803 - openevolve.database - DEBUG - Sampled parent a7dc602b-660c-4669-a32a-15e3e6b43454 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.529)
+2026-04-22 15:02:26,014 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:02:26,015 - openevolve.database - DEBUG - Added program cbf87990-8dec-4570-8034-ff20bdfce851 to island 0
+2026-04-22 15:02:26,015 - openevolve.database - DEBUG - Island 0 generation incremented to 27
+2026-04-22 15:02:26,016 - openevolve.process_parallel - INFO - Performing migration at iteration 27
+2026-04-22 15:02:26,016 - openevolve.database - INFO - Island Status:
+2026-04-22 15:02:26,016 - openevolve.database - INFO -  * Island 0: 28 programs, best=-8.6781, avg=-857142858.3826, diversity=109.12, gen=27 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:02:26,016 - openevolve.process_parallel - INFO - Iteration 27: Program cbf87990-8dec-4570-8034-ff20bdfce851 (parent: 04c36e07-cf8f-4c3b-9369-0f3903e77096) completed in 54.21s
+2026-04-22 15:02:26,016 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:02:26,017 - openevolve.database - DEBUG - Sampled parent cbf87990-8dec-4570-8034-ff20bdfce851 and 3 inspirations from island 0 (mode: exploration, rand_val: 0.115)
+2026-04-22 15:03:11,775 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:03:11,776 - openevolve.database - DEBUG - Added program 613cf0c4-4de4-408c-ac86-301b8e58513f to island 0
+2026-04-22 15:03:11,776 - openevolve.database - DEBUG - Island 0 generation incremented to 28
+2026-04-22 15:03:11,776 - openevolve.process_parallel - INFO - Performing migration at iteration 28
+2026-04-22 15:03:11,777 - openevolve.database - INFO - Island Status:
+2026-04-22 15:03:11,777 - openevolve.database - INFO -  * Island 0: 29 programs, best=-8.6781, avg=-862068966.7142, diversity=109.12, gen=28 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:03:11,777 - openevolve.process_parallel - INFO - Iteration 28: Program 613cf0c4-4de4-408c-ac86-301b8e58513f (parent: a7dc602b-660c-4669-a32a-15e3e6b43454) completed in 45.76s
+2026-04-22 15:03:11,777 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:03:11,777 - openevolve.database - DEBUG - Sampled parent 072e09a9-02e7-4ccb-a2ad-213798cceb54 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.340)
+2026-04-22 15:04:07,326 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:04:07,326 - openevolve.database - DEBUG - Added program c6021af3-49fa-49c4-9f8e-dd4e36d4f0f5 to island 0
+2026-04-22 15:04:07,326 - openevolve.database - DEBUG - Island 0 generation incremented to 29
+2026-04-22 15:04:07,327 - openevolve.process_parallel - INFO - Performing migration at iteration 29
+2026-04-22 15:04:07,327 - openevolve.database - INFO - Island Status:
+2026-04-22 15:04:07,327 - openevolve.database - INFO -  * Island 0: 30 programs, best=-8.6781, avg=-866666667.8238, diversity=109.12, gen=29 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:04:07,328 - openevolve.process_parallel - INFO - Iteration 29: Program c6021af3-49fa-49c4-9f8e-dd4e36d4f0f5 (parent: cbf87990-8dec-4570-8034-ff20bdfce851) completed in 55.54s
+2026-04-22 15:04:07,328 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:04:07,328 - openevolve.database - DEBUG - Sampled parent 3b54e9b1-89b3-4049-8490-8d6fb55722e4 and 3 inspirations from island 0 (mode: exploration, rand_val: 0.003)
+2026-04-22 15:04:59,389 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:04:59,390 - openevolve.database - DEBUG - Added program 2e37cfe4-798d-4a82-b533-9d31650f540f to island 0
+2026-04-22 15:04:59,390 - openevolve.database - DEBUG - Island 0 generation incremented to 30
+2026-04-22 15:04:59,390 - openevolve.process_parallel - INFO - Performing migration at iteration 30
+2026-04-22 15:04:59,391 - openevolve.database - INFO - Island Status:
+2026-04-22 15:04:59,391 - openevolve.database - INFO -  * Island 0: 31 programs, best=-8.6781, avg=-870967743.0552, diversity=109.12, gen=30 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:04:59,391 - openevolve.process_parallel - INFO - Iteration 30: Program 2e37cfe4-798d-4a82-b533-9d31650f540f (parent: 072e09a9-02e7-4ccb-a2ad-213798cceb54) completed in 52.06s
+2026-04-22 15:04:59,391 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:04:59,391 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 30
+2026-04-22 15:04:59,391 - openevolve.database - INFO - Island Status:
+2026-04-22 15:04:59,391 - openevolve.database - INFO -  * Island 0: 31 programs, best=-8.6781, avg=-870967743.0552, diversity=109.12, gen=30 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:04:59,406 - openevolve.database - INFO - Saved database with 31 programs to openevolve_output/checkpoints/checkpoint_30
+2026-04-22 15:04:59,407 - openevolve.controller - INFO - Saved best program at checkpoint 30 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:04:59,407 - openevolve.controller - INFO - Saved checkpoint at iteration 30 to openevolve_output/checkpoints/checkpoint_30
+2026-04-22 15:04:59,407 - openevolve.database - DEBUG - Sampled parent 1456f791-3001-4de3-b075-2b1131d8c86c and 3 inspirations from island 0 (mode: weighted, rand_val: 0.972)
+2026-04-22 15:05:51,660 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:05:51,662 - openevolve.database - DEBUG - Added program af9e38cd-805b-4a8b-8909-085822f7e959 to island 0
+2026-04-22 15:05:51,662 - openevolve.database - DEBUG - Island 0 generation incremented to 31
+2026-04-22 15:05:51,662 - openevolve.process_parallel - INFO - Performing migration at iteration 31
+2026-04-22 15:05:51,663 - openevolve.database - INFO - Island Status:
+2026-04-22 15:05:51,663 - openevolve.database - INFO -  * Island 0: 32 programs, best=-8.6781, avg=-875000001.0848, diversity=109.12, gen=31 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:05:51,663 - openevolve.process_parallel - INFO - Iteration 31: Program af9e38cd-805b-4a8b-8909-085822f7e959 (parent: 3b54e9b1-89b3-4049-8490-8d6fb55722e4) completed in 52.26s
+2026-04-22 15:05:51,663 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:05:51,663 - openevolve.database - DEBUG - Sampled parent 9037a17d-c907-4849-8360-de06c910fb90 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.871)
+2026-04-22 15:06:46,286 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:06:46,287 - openevolve.database - DEBUG - Added program f465a903-395f-4f91-aca2-94d3bdf81158 to island 0
+2026-04-22 15:06:46,287 - openevolve.database - DEBUG - Island 0 generation incremented to 32
+2026-04-22 15:06:46,287 - openevolve.process_parallel - INFO - Performing migration at iteration 32
+2026-04-22 15:06:46,288 - openevolve.database - INFO - Island Status:
+2026-04-22 15:06:46,288 - openevolve.database - INFO -  * Island 0: 33 programs, best=-8.6781, avg=-878787879.8398, diversity=109.12, gen=32 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:06:46,288 - openevolve.process_parallel - INFO - Iteration 32: Program f465a903-395f-4f91-aca2-94d3bdf81158 (parent: 1456f791-3001-4de3-b075-2b1131d8c86c) completed in 54.62s
+2026-04-22 15:06:46,288 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:06:46,288 - openevolve.database - DEBUG - Sampled parent 0e7a1461-4f2a-40ce-b04f-967eab0c0dad and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.609)
+2026-04-22 15:07:45,649 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:07:45,652 - openevolve.database - DEBUG - Added program 09898726-04f2-4a2f-8e79-28ac11fdff20 to island 0
+2026-04-22 15:07:45,657 - openevolve.database - DEBUG - Island 0 generation incremented to 33
+2026-04-22 15:07:45,658 - openevolve.process_parallel - INFO - Performing migration at iteration 33
+2026-04-22 15:07:45,658 - openevolve.database - INFO - Island Status:
+2026-04-22 15:07:45,658 - openevolve.database - INFO -  * Island 0: 34 programs, best=-8.6781, avg=-882352942.1974, diversity=92.07, gen=33 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:07:45,658 - openevolve.process_parallel - INFO - Iteration 33: Program 09898726-04f2-4a2f-8e79-28ac11fdff20 (parent: 9037a17d-c907-4849-8360-de06c910fb90) completed in 59.36s
+2026-04-22 15:07:45,658 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:07:45,659 - openevolve.database - DEBUG - Sampled parent 09898726-04f2-4a2f-8e79-28ac11fdff20 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.599)
+2026-04-22 15:08:40,670 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:08:40,671 - openevolve.database - DEBUG - Added program 5266d5e9-9d61-49b3-9d76-e045b70094d2 to island 0
+2026-04-22 15:08:40,671 - openevolve.database - DEBUG - Island 0 generation incremented to 34
+2026-04-22 15:08:40,671 - openevolve.process_parallel - INFO - Performing migration at iteration 34
+2026-04-22 15:08:40,672 - openevolve.database - INFO - Island Status:
+2026-04-22 15:08:40,672 - openevolve.database - INFO -  * Island 0: 35 programs, best=-8.6781, avg=-885714286.7061, diversity=92.07, gen=34 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:08:40,672 - openevolve.process_parallel - INFO - Iteration 34: Program 5266d5e9-9d61-49b3-9d76-e045b70094d2 (parent: 0e7a1461-4f2a-40ce-b04f-967eab0c0dad) completed in 55.02s
+2026-04-22 15:08:40,672 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:08:40,672 - openevolve.database - DEBUG - Sampled parent af9e38cd-805b-4a8b-8909-085822f7e959 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.879)
+2026-04-22 15:09:41,321 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:09:41,322 - openevolve.database - DEBUG - Added program 13729f5c-7328-40fb-9e95-264a2f24ae02 to island 0
+2026-04-22 15:09:41,322 - openevolve.database - DEBUG - Island 0 generation incremented to 35
+2026-04-22 15:09:41,323 - openevolve.process_parallel - INFO - Performing migration at iteration 35
+2026-04-22 15:09:41,323 - openevolve.database - INFO - Island Status:
+2026-04-22 15:09:41,323 - openevolve.database - INFO -  * Island 0: 36 programs, best=-8.6781, avg=-888888889.8531, diversity=92.07, gen=35 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:09:41,323 - openevolve.process_parallel - INFO - Iteration 35: Program 13729f5c-7328-40fb-9e95-264a2f24ae02 (parent: 09898726-04f2-4a2f-8e79-28ac11fdff20) completed in 60.65s
+2026-04-22 15:09:41,324 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:09:41,324 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 35
+2026-04-22 15:09:41,324 - openevolve.database - INFO - Island Status:
+2026-04-22 15:09:41,324 - openevolve.database - INFO -  * Island 0: 36 programs, best=-8.6781, avg=-888888889.8531, diversity=92.07, gen=35 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:09:41,342 - openevolve.database - INFO - Saved database with 36 programs to openevolve_output/checkpoints/checkpoint_35
+2026-04-22 15:09:41,342 - openevolve.controller - INFO - Saved best program at checkpoint 35 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:09:41,342 - openevolve.controller - INFO - Saved checkpoint at iteration 35 to openevolve_output/checkpoints/checkpoint_35
+2026-04-22 15:09:41,343 - openevolve.database - DEBUG - Sampled parent d4624d0a-9616-4338-987e-719afc089a2d and 3 inspirations from island 0 (mode: exploration, rand_val: 0.086)
+2026-04-22 15:10:34,382 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:10:34,382 - openevolve.database - DEBUG - Added program 00bfcbc4-9c56-4641-aef9-a02506ce16a9 to island 0
+2026-04-22 15:10:34,382 - openevolve.database - DEBUG - Island 0 generation incremented to 36
+2026-04-22 15:10:34,382 - openevolve.process_parallel - INFO - Performing migration at iteration 36
+2026-04-22 15:10:34,383 - openevolve.database - INFO - Island Status:
+2026-04-22 15:10:34,383 - openevolve.database - INFO -  * Island 0: 37 programs, best=-8.6781, avg=-891891892.8301, diversity=71.97, gen=36 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:10:34,383 - openevolve.process_parallel - INFO - Iteration 36: Program 00bfcbc4-9c56-4641-aef9-a02506ce16a9 (parent: af9e38cd-805b-4a8b-8909-085822f7e959) completed in 53.05s
+2026-04-22 15:10:34,383 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:10:34,383 - openevolve.database - DEBUG - Sampled parent 5266d5e9-9d61-49b3-9d76-e045b70094d2 and 3 inspirations from island 0 (mode: exploration, rand_val: 0.128)
+2026-04-22 15:11:35,685 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:11:35,685 - openevolve.database - DEBUG - Added program cf013479-599c-4e83-a0e0-310c71d8c42f to island 0
+2026-04-22 15:11:35,685 - openevolve.database - DEBUG - Island 0 generation incremented to 37
+2026-04-22 15:11:35,685 - openevolve.process_parallel - INFO - Performing migration at iteration 37
+2026-04-22 15:11:35,686 - openevolve.database - INFO - Island Status:
+2026-04-22 15:11:35,686 - openevolve.database - INFO -  * Island 0: 38 programs, best=-8.6781, avg=-894736843.0188, diversity=71.97, gen=37 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:11:35,686 - openevolve.process_parallel - INFO - Iteration 37: Program cf013479-599c-4e83-a0e0-310c71d8c42f (parent: d4624d0a-9616-4338-987e-719afc089a2d) completed in 61.30s
+2026-04-22 15:11:35,686 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:11:35,686 - openevolve.database - DEBUG - Sampled parent 1456f791-3001-4de3-b075-2b1131d8c86c and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.528)
+2026-04-22 15:12:30,471 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:12:30,471 - openevolve.database - DEBUG - Added program a5a86c3d-e8d0-4a77-8f8a-2aae1723cb05 to island 0
+2026-04-22 15:12:30,471 - openevolve.database - DEBUG - Island 0 generation incremented to 38
+2026-04-22 15:12:30,472 - openevolve.process_parallel - INFO - Performing migration at iteration 38
+2026-04-22 15:12:30,472 - openevolve.database - INFO - Island Status:
+2026-04-22 15:12:30,472 - openevolve.database - INFO -  * Island 0: 39 programs, best=-8.6781, avg=-897435898.3260, diversity=71.97, gen=38 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:12:30,472 - openevolve.process_parallel - INFO - Iteration 38: Program a5a86c3d-e8d0-4a77-8f8a-2aae1723cb05 (parent: 5266d5e9-9d61-49b3-9d76-e045b70094d2) completed in 54.79s
+2026-04-22 15:12:30,472 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:12:30,473 - openevolve.database - DEBUG - Sampled parent c092fae6-be4e-467f-a43a-d31b1dcac911 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.713)
+2026-04-22 15:13:31,439 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:13:31,440 - openevolve.database - DEBUG - Added program 83bc1ccf-c9de-4ab1-a606-239266461244 to island 0
+2026-04-22 15:13:31,440 - openevolve.database - DEBUG - Island 0 generation incremented to 39
+2026-04-22 15:13:31,440 - openevolve.process_parallel - INFO - Performing migration at iteration 39
+2026-04-22 15:13:31,441 - openevolve.database - INFO - Island Status:
+2026-04-22 15:13:31,441 - openevolve.database - INFO -  * Island 0: 40 programs, best=-8.6781, avg=-900000000.8678, diversity=71.97, gen=39 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:13:31,441 - openevolve.process_parallel - INFO - Iteration 39: Program 83bc1ccf-c9de-4ab1-a606-239266461244 (parent: 1456f791-3001-4de3-b075-2b1131d8c86c) completed in 60.97s
+2026-04-22 15:13:31,441 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:13:31,442 - openevolve.database - DEBUG - Sampled parent 0d2e0664-9009-46df-be3b-8740358023f1 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.451)
+2026-04-22 15:14:15,891 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:14:15,891 - openevolve.database - DEBUG - Added program 71522472-72e3-4af7-a43e-a85520ca54c8 to island 0
+2026-04-22 15:14:15,892 - openevolve.database - DEBUG - Island 0 generation incremented to 40
+2026-04-22 15:14:15,892 - openevolve.process_parallel - INFO - Performing migration at iteration 40
+2026-04-22 15:14:15,892 - openevolve.database - INFO - Island Status:
+2026-04-22 15:14:15,892 - openevolve.database - INFO -  * Island 0: 41 programs, best=-8.6781, avg=-902439025.2369, diversity=71.97, gen=40 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:14:15,892 - openevolve.process_parallel - INFO - Iteration 40: Program 71522472-72e3-4af7-a43e-a85520ca54c8 (parent: c092fae6-be4e-467f-a43a-d31b1dcac911) completed in 44.45s
+2026-04-22 15:14:15,892 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:14:15,892 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 40
+2026-04-22 15:14:15,893 - openevolve.database - INFO - Island Status:
+2026-04-22 15:14:15,893 - openevolve.database - INFO -  * Island 0: 41 programs, best=-8.6781, avg=-902439025.2369, diversity=71.97, gen=40 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:14:15,912 - openevolve.database - INFO - Saved database with 41 programs to openevolve_output/checkpoints/checkpoint_40
+2026-04-22 15:14:15,913 - openevolve.controller - INFO - Saved best program at checkpoint 40 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:14:15,913 - openevolve.controller - INFO - Saved checkpoint at iteration 40 to openevolve_output/checkpoints/checkpoint_40
+2026-04-22 15:14:15,914 - openevolve.database - DEBUG - Sampled parent d4624d0a-9616-4338-987e-719afc089a2d and 3 inspirations from island 0 (mode: exploration, rand_val: 0.021)
+2026-04-22 15:15:12,515 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:15:12,516 - openevolve.database - DEBUG - Added program b1364c74-8f7e-4f9f-b674-5025d9976652 to island 0
+2026-04-22 15:15:12,516 - openevolve.database - DEBUG - Island 0 generation incremented to 41
+2026-04-22 15:15:12,516 - openevolve.process_parallel - INFO - Performing migration at iteration 41
+2026-04-22 15:15:12,517 - openevolve.database - INFO - Island Status:
+2026-04-22 15:15:12,517 - openevolve.database - INFO -  * Island 0: 42 programs, best=-8.6781, avg=-904761905.5884, diversity=71.97, gen=41 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:15:12,517 - openevolve.process_parallel - INFO - Iteration 41: Program b1364c74-8f7e-4f9f-b674-5025d9976652 (parent: 0d2e0664-9009-46df-be3b-8740358023f1) completed in 56.62s
+2026-04-22 15:15:12,517 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:15:12,517 - openevolve.database - DEBUG - Sampled parent ae6fe788-b892-4105-b5c7-24fff7e2c908 and 3 inspirations from island 0 (mode: exploration, rand_val: 0.071)
+2026-04-22 15:16:13,669 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:16:13,670 - openevolve.database - DEBUG - Added program f0805db8-3074-4e77-8e3b-600b57a797fe to island 0
+2026-04-22 15:16:13,670 - openevolve.database - DEBUG - Island 0 generation incremented to 42
+2026-04-22 15:16:13,670 - openevolve.process_parallel - INFO - Performing migration at iteration 42
+2026-04-22 15:16:13,671 - openevolve.database - INFO - Island Status:
+2026-04-22 15:16:13,671 - openevolve.database - INFO -  * Island 0: 43 programs, best=-8.6781, avg=-906976744.9933, diversity=71.97, gen=42 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:16:13,671 - openevolve.process_parallel - INFO - Iteration 42: Program f0805db8-3074-4e77-8e3b-600b57a797fe (parent: d4624d0a-9616-4338-987e-719afc089a2d) completed in 61.15s
+2026-04-22 15:16:13,671 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:16:13,671 - openevolve.database - DEBUG - Sampled parent 613cf0c4-4de4-408c-ac86-301b8e58513f and 3 inspirations from island 0 (mode: weighted, rand_val: 0.905)
+2026-04-22 15:17:14,979 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:17:14,980 - openevolve.database - DEBUG - Added program 763d2f6a-3b93-4b84-8f38-ea7a5441a2c6 to island 0
+2026-04-22 15:17:14,981 - openevolve.database - DEBUG - Island 0 generation incremented to 43
+2026-04-22 15:17:14,981 - openevolve.process_parallel - INFO - Performing migration at iteration 43
+2026-04-22 15:17:14,982 - openevolve.database - INFO - Island Status:
+2026-04-22 15:17:14,982 - openevolve.database - INFO -  * Island 0: 44 programs, best=-8.6781, avg=-909090909.8798, diversity=71.97, gen=43 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:17:14,982 - openevolve.process_parallel - INFO - Iteration 43: Program 763d2f6a-3b93-4b84-8f38-ea7a5441a2c6 (parent: ae6fe788-b892-4105-b5c7-24fff7e2c908) completed in 61.31s
+2026-04-22 15:17:14,982 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:17:14,982 - openevolve.database - DEBUG - Sampled parent bf531faf-e31a-42c8-bffc-024526dd148c and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.278)
+2026-04-22 15:17:58,888 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:17:58,889 - openevolve.database - DEBUG - Added program cff2a183-f0d6-416a-8daf-bbd34816a7e0 to island 0
+2026-04-22 15:17:58,889 - openevolve.database - DEBUG - Island 0 generation incremented to 44
+2026-04-22 15:17:58,889 - openevolve.process_parallel - INFO - Performing migration at iteration 44
+2026-04-22 15:17:58,890 - openevolve.database - INFO - Island Status:
+2026-04-22 15:17:58,890 - openevolve.database - INFO -  * Island 0: 45 programs, best=-8.6781, avg=-911111111.8825, diversity=71.97, gen=44 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:17:58,890 - openevolve.process_parallel - INFO - Iteration 44: Program cff2a183-f0d6-416a-8daf-bbd34816a7e0 (parent: 613cf0c4-4de4-408c-ac86-301b8e58513f) completed in 43.90s
+2026-04-22 15:17:58,890 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:17:58,890 - openevolve.database - DEBUG - Sampled parent 5266d5e9-9d61-49b3-9d76-e045b70094d2 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.723)
+2026-04-22 15:18:48,124 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:18:48,126 - openevolve.database - DEBUG - Added program 8e0fb1b3-a872-4b24-b16b-a70732e90463 to island 0
+2026-04-22 15:18:48,126 - openevolve.database - DEBUG - Island 0 generation incremented to 45
+2026-04-22 15:18:48,126 - openevolve.process_parallel - INFO - Performing migration at iteration 45
+2026-04-22 15:18:48,127 - openevolve.database - INFO - Island Status:
+2026-04-22 15:18:48,127 - openevolve.database - INFO -  * Island 0: 46 programs, best=-8.6781, avg=-913043479.0155, diversity=71.97, gen=45 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:18:48,127 - openevolve.process_parallel - INFO - Iteration 45: Program 8e0fb1b3-a872-4b24-b16b-a70732e90463 (parent: bf531faf-e31a-42c8-bffc-024526dd148c) completed in 49.24s
+2026-04-22 15:18:48,127 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:18:48,127 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 45
+2026-04-22 15:18:48,127 - openevolve.database - INFO - Island Status:
+2026-04-22 15:18:48,128 - openevolve.database - INFO -  * Island 0: 46 programs, best=-8.6781, avg=-913043479.0155, diversity=71.97, gen=45 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:18:48,147 - openevolve.database - INFO - Saved database with 46 programs to openevolve_output/checkpoints/checkpoint_45
+2026-04-22 15:18:48,147 - openevolve.controller - INFO - Saved best program at checkpoint 45 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:18:48,147 - openevolve.controller - INFO - Saved checkpoint at iteration 45 to openevolve_output/checkpoints/checkpoint_45
+2026-04-22 15:18:48,147 - openevolve.database - DEBUG - Sampled parent 9037a17d-c907-4849-8360-de06c910fb90 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.785)
+2026-04-22 15:19:46,526 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:19:46,526 - openevolve.database - DEBUG - Added program 07f181bd-7f36-4fc0-819d-04dad461c0d5 to island 0
+2026-04-22 15:19:46,526 - openevolve.database - DEBUG - Island 0 generation incremented to 46
+2026-04-22 15:19:46,527 - openevolve.process_parallel - INFO - Performing migration at iteration 46
+2026-04-22 15:19:46,528 - openevolve.database - INFO - Island Status:
+2026-04-22 15:19:46,528 - openevolve.database - INFO -  * Island 0: 47 programs, best=-8.6781, avg=-914893617.7598, diversity=156.55, gen=46 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:19:46,528 - openevolve.process_parallel - INFO - Iteration 46: Program 07f181bd-7f36-4fc0-819d-04dad461c0d5 (parent: 5266d5e9-9d61-49b3-9d76-e045b70094d2) completed in 58.40s
+2026-04-22 15:19:46,528 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:19:46,528 - openevolve.database - DEBUG - Sampled parent 9037a17d-c907-4849-8360-de06c910fb90 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.431)
+2026-04-22 15:20:41,892 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:20:41,894 - openevolve.database - DEBUG - Added program e3a2c274-fbbc-48ce-b0f7-0f5a5c4f419d to island 0
+2026-04-22 15:20:41,894 - openevolve.database - DEBUG - Island 0 generation incremented to 47
+2026-04-22 15:20:41,894 - openevolve.process_parallel - INFO - Performing migration at iteration 47
+2026-04-22 15:20:41,895 - openevolve.database - INFO - Island Status:
+2026-04-22 15:20:41,895 - openevolve.database - INFO -  * Island 0: 48 programs, best=-8.6781, avg=-916666667.3898, diversity=156.55, gen=47 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:20:41,895 - openevolve.process_parallel - INFO - Iteration 47: Program e3a2c274-fbbc-48ce-b0f7-0f5a5c4f419d (parent: 9037a17d-c907-4849-8360-de06c910fb90) completed in 55.37s
+2026-04-22 15:20:41,895 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:20:41,895 - openevolve.database - DEBUG - Sampled parent 613cf0c4-4de4-408c-ac86-301b8e58513f and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.673)
+2026-04-22 15:21:34,851 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:21:34,852 - openevolve.database - DEBUG - Added program 4ae211a1-ea6a-49d9-9c37-bc64809966b1 to island 0
+2026-04-22 15:21:34,852 - openevolve.database - DEBUG - Island 0 generation incremented to 48
+2026-04-22 15:21:34,852 - openevolve.process_parallel - INFO - Performing migration at iteration 48
+2026-04-22 15:21:34,853 - openevolve.database - INFO - Island Status:
+2026-04-22 15:21:34,853 - openevolve.database - INFO -  * Island 0: 49 programs, best=-8.6781, avg=-918367347.6472, diversity=156.55, gen=48 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:21:34,853 - openevolve.process_parallel - INFO - Iteration 48: Program 4ae211a1-ea6a-49d9-9c37-bc64809966b1 (parent: 9037a17d-c907-4849-8360-de06c910fb90) completed in 52.96s
+2026-04-22 15:21:34,853 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:21:34,853 - openevolve.database - DEBUG - Sampled parent f465a903-395f-4f91-aca2-94d3bdf81158 and 3 inspirations from island 0 (mode: exploitation, rand_val: 0.728)
+2026-04-22 15:22:18,721 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:22:18,723 - openevolve.database - DEBUG - Added program 4199c257-4480-41cf-a95b-34e3dceda879 to island 0
+2026-04-22 15:22:18,723 - openevolve.database - DEBUG - Island 0 generation incremented to 49
+2026-04-22 15:22:18,723 - openevolve.process_parallel - INFO - Performing migration at iteration 49
+2026-04-22 15:22:18,724 - openevolve.database - INFO - Island Status:
+2026-04-22 15:22:18,724 - openevolve.database - INFO -  * Island 0: 50 programs, best=-8.6781, avg=-920000000.6942, diversity=156.55, gen=49 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:22:18,724 - openevolve.process_parallel - INFO - Iteration 49: Program 4199c257-4480-41cf-a95b-34e3dceda879 (parent: 613cf0c4-4de4-408c-ac86-301b8e58513f) completed in 43.86s
+2026-04-22 15:22:18,724 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:23:10,156 - openevolve.database - DEBUG - MAP-Elites coords: {'combined_score': 0, 'avg_retry_count': 9}
+2026-04-22 15:23:10,157 - openevolve.database - DEBUG - Added program 8580f16c-dae3-42b6-996e-93556afe14d8 to island 0
+2026-04-22 15:23:10,157 - openevolve.database - DEBUG - Island 0 generation incremented to 50
+2026-04-22 15:23:10,157 - openevolve.process_parallel - INFO - Performing migration at iteration 50
+2026-04-22 15:23:10,158 - openevolve.database - INFO - Island Status:
+2026-04-22 15:23:10,158 - openevolve.database - INFO -  * Island 0: 51 programs, best=-8.6781, avg=-921568628.1316, diversity=156.55, gen=50 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:23:10,158 - openevolve.process_parallel - INFO - Iteration 50: Program 8580f16c-dae3-42b6-996e-93556afe14d8 (parent: f465a903-395f-4f91-aca2-94d3bdf81158) completed in 51.43s
+2026-04-22 15:23:10,158 - openevolve.process_parallel - INFO - Metrics: runs_successfully=0.0000, success_rate=0.0000, avg_latency_ms=999999.0000, avg_retry_count=999.0000, dangerous_non_idempotent_retries=999.0000, useless_retries=999.0000, good_fail_fast_decisions=0.0000, good_endpoint_switches=0.0000, combined_score=-1000000000.0000
+2026-04-22 15:23:10,158 - openevolve.process_parallel - INFO - Checkpoint interval reached at iteration 50
+2026-04-22 15:23:10,159 - openevolve.database - INFO - Island Status:
+2026-04-22 15:23:10,159 - openevolve.database - INFO -  * Island 0: 51 programs, best=-8.6781, avg=-921568628.1316, diversity=156.55, gen=50 (best: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51)
+2026-04-22 15:23:10,183 - openevolve.database - INFO - Saved database with 51 programs to openevolve_output/checkpoints/checkpoint_50
+2026-04-22 15:23:10,184 - openevolve.controller - INFO - Saved best program at checkpoint 50 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:23:10,184 - openevolve.controller - INFO - Saved checkpoint at iteration 50 to openevolve_output/checkpoints/checkpoint_50
+2026-04-22 15:23:10,184 - openevolve.process_parallel - INFO - ✅ Evolution completed - Maximum iterations reached
+2026-04-22 15:23:10,184 - openevolve.database - DEBUG - Using tracked best program: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51
+2026-04-22 15:23:10,203 - openevolve.database - INFO - Saved database with 51 programs to openevolve_output/checkpoints/checkpoint_50
+2026-04-22 15:23:10,204 - openevolve.controller - INFO - Saved best program at checkpoint 50 with metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:23:10,204 - openevolve.controller - INFO - Saved checkpoint at iteration 50 to openevolve_output/checkpoints/checkpoint_50
+2026-04-22 15:23:10,474 - openevolve.process_parallel - INFO - Stopped process pool
+2026-04-22 15:23:10,474 - openevolve.controller - INFO - Using tracked best program: d5f4a763-30f9-4bde-b3ac-243ddfb1ea51
+2026-04-22 15:23:10,474 - openevolve.controller - INFO - Evolution complete. Best program has metrics: runs_successfully=1.0000, success_rate=0.4062, avg_latency_ms=1320.0000, avg_retry_count=2.0312, dangerous_non_idempotent_retries=0.0000, useless_retries=0.6875, good_fail_fast_decisions=0.2812, good_endpoint_switches=0.0000, combined_score=-8.6781
+2026-04-22 15:23:10,475 - openevolve.controller - INFO - Saved best program to openevolve_output/best/best_program.py with program info to openevolve_output/best/best_program_info.json
