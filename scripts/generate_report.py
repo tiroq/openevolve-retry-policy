@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import difflib
 import json
+import math
 import re
 import subprocess
 import sys
@@ -578,6 +579,50 @@ def generate_report(
                 a(diff_str.rstrip())
                 a("```")
                 a("")
+
+    # ═══ Mutation timing stats ════════════════════════════════════════════════
+    a("## Mutation Timing")
+    a("")
+    if iterations:
+        durations = [rec.duration_s for rec in iterations]
+        t_min = min(durations)
+        t_max = max(durations)
+        t_avg = sum(durations) / len(durations)
+        variance = sum((d - t_avg) ** 2 for d in durations) / len(durations)
+        t_std = math.sqrt(variance)
+        total_s = sum(durations)
+        total_min = int(total_s // 60)
+        total_sec = total_s % 60
+        a("| Stat | Value |")
+        a("|------|-------|")
+        a(f"| Iterations | {len(durations)} |")
+        a(f"| Min | {t_min:.1f} s |")
+        a(f"| Max | {t_max:.1f} s |")
+        a(f"| Avg | {t_avg:.1f} s |")
+        a(f"| Std dev | {t_std:.1f} s |")
+        a(f"| Total wall time | {total_min}m {total_sec:.0f}s |")
+        a("")
+
+        # Slowest and fastest iterations
+        slowest = sorted(iterations, key=lambda r: r.duration_s, reverse=True)[:3]
+        fastest = sorted(iterations, key=lambda r: r.duration_s)[:3]
+        a("**Slowest 3 iterations:**")
+        a("")
+        a("| Iter | Program (short) | Duration (s) |")
+        a("|------|-----------------|-------------|")
+        for rec in slowest:
+            a(f"| {rec.iteration} | `{rec.program_id[:8]}` | {rec.duration_s:.1f} |")
+        a("")
+        a("**Fastest 3 iterations:**")
+        a("")
+        a("| Iter | Program (short) | Duration (s) |")
+        a("|------|-----------------|-------------|")
+        for rec in fastest:
+            a(f"| {rec.iteration} | `{rec.program_id[:8]}` | {rec.duration_s:.1f} |")
+        a("")
+    else:
+        a("No iteration timing data available.")
+        a("")
 
     # ═══ Plateau analysis ═════════════════════════════════════════════════════
     a("## Plateau Analysis")
