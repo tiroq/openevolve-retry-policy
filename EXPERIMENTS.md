@@ -68,10 +68,10 @@ and never crashes, but it leaves substantial headroom in `success_rate` and
 | --- | --- | --- | --- | --- | --- |
 | Hosted | `google/gemma-4-26b-a4b-it` (illustrative cloud reference) | OpenRouter / OpenAI-compatible | Valid evolution observed | Useful baseline behavior | Cloud reference; faster turnaround than local models |
 | Local large | `qwen3.6:35b-a3b` / `gemma4:e4b` (local) | Ollama-compatible | Slow runs; some no-diff / prose responses | Rejected / inconclusive | Local generation quality issues; long latency per candidate |
-| Local small-coder | `qwen2.5-coder:1.5b` | Ollama / proxy | Train improvement observed | Holdout regression in candidate example | Good for fast iteration, requires gates |
-| Tiny | `tinyllama:1.1b` | Ollama / proxy | Mostly invalid candidates | Rejected | Weak contract following |
-| Tiny-coder | `qwen2.5-coder:0.5b` | Ollama / proxy | Many invalid / no-op candidates | Rejected | Too weak for reliable evolution |
-| Small-coder | `qwen2.5-coder:3b` | Ollama / proxy | Minor train improvement | Needs holdout validation | Promising but slower / less stable than 1.5b |
+| Local small-coder | `qwen2.5-coder:1.5b` | Ollama | Train improvement observed | Holdout regression in candidate example | Good for fast iteration, requires gates |
+| Tiny | `tinyllama:1.1b` | Ollama | Mostly invalid candidates | Rejected | Weak contract following |
+| Tiny-coder | `qwen2.5-coder:0.5b` | Ollama | Many invalid / no-op candidates | Rejected | Too weak for reliable evolution |
+| Small-coder | `qwen2.5-coder:3b` | Ollama | Minor train improvement | Needs holdout validation | Promising but slower / less stable than 1.5b |
 
 These rows describe the *shape* of what was observed, not formally
 reproducible results. Logs and best-program artifacts for several rounds
