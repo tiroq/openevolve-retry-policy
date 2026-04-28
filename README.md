@@ -82,7 +82,6 @@ the evaluator returns `combined_score = -1e9` and `runs_successfully = 0.0`
 ├── README.md                         # This file
 ├── AGENTS.md                         # Project guidelines for coding agents
 ├── EXPERIMENTS.md                    # Experiment journal
-├── ACCEPTANCE_CRITERIA.md            # Hard / behavioral / holdout gates
 ├── LESSONS_LEARNED.md                # Distilled insights
 ├── Taskfile.yml                      # Reproducible task runner entry points
 ├── config.yaml                       # OpenEvolve config (local LLMs)
@@ -93,6 +92,7 @@ the evaluator returns `combined_score = -1e9` and `runs_successfully = 0.0`
 ├── docs/
 │   ├── POSITIONING.md                # How this repo maps to QA / reliability work
 │   ├── MODEL_FAILURE_MODES.md        # Observed LLM failure modes
+│   ├── ACCEPTANCE_CRITERIA.md        # Hard / behavioral / holdout gates
 │   ├── ARTICLE_SERIES_PLAN.md        # Outline of upcoming write-ups
 │   ├── REPORT_TEMPLATE.md            # Per-run report template
 │   ├── REPO_GUIDE.md                 # Where to look for what
@@ -253,7 +253,7 @@ the sole acceptance signal.
 
 A candidate must pass all of the following before being considered
 accepted. Full checklist in
-[ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md).
+[ACCEPTANCE_CRITERIA.md](docs/ACCEPTANCE_CRITERIA.md).
 
 - program imports successfully
 - `choose_action` signature preserved
@@ -310,7 +310,7 @@ Highlights:
 
 - [EXPERIMENTS.md](EXPERIMENTS.md) — experiment journal
 - [Experiment artifacts](experiments/README.md) — curated index of committed OpenEvolve run outputs.
-- [ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md) — hard, behavioral, and holdout gates
+- [ACCEPTANCE_CRITERIA.md](docs/ACCEPTANCE_CRITERIA.md) — hard, behavioral, and holdout gates
 - [LESSONS_LEARNED.md](LESSONS_LEARNED.md) — distilled lessons
 - [docs/POSITIONING.md](docs/POSITIONING.md) — how this maps to QA / reliability work
 - [docs/MODEL_FAILURE_MODES.md](docs/MODEL_FAILURE_MODES.md) — observed LLM failure modes
