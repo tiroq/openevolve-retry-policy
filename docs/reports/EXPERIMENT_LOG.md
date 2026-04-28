@@ -3,7 +3,7 @@
 A chronological log of observed runs and manual checks. Entries marked
 *"observed in manual run"* come from operator notes and proxy logs; the
 exact iteration files may not be committed. Entries that point to
-committed artifacts under `round_*_openevolve_output/` are reproducible
+committed artifacts under `experiments/rounds/round_*_openevolve_output/` are reproducible
 to the extent that the original model + endpoint configuration is
 available.
 
