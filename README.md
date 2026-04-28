@@ -56,7 +56,7 @@ This example follows the standard OpenEvolve pattern:
 - `evaluator.py` returns metrics including `combined_score`
 - `config.yaml` configures the run
 
-The current OpenEvolve repository documents this pattern and uses `combined_score` as the primary optimization metric. It also supports OpenAI-compatible endpoints and example invocation via `openevolve-run.py ... initial_program.py evaluator.py --config config.yaml`. citeturn553434search0turn553434search2turn553434search8
+The current OpenEvolve repository documents this pattern and uses `combined_score` as the primary optimization metric. It also supports OpenAI-compatible endpoints and example invocation via `openevolve-run.py ... initial_program.py evaluator.py --config config.yaml`.
 
 ## Quick start
 
