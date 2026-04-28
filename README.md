@@ -102,7 +102,15 @@ the evaluator returns `combined_score = -1e9` and `runs_successfully = 0.0`
 │       ├── FINAL_REPORT.md           # Polished case-study summary
 │       ├── EXPERIMENT_LOG.md         # Chronological observations
 │       └── HOLDOUT_ANALYSIS.md       # Train vs holdout deep dive
-├── round_*_openevolve_output/        # Saved OpenEvolve artifacts (best / checkpoints / logs)
+├── experiments/
+│   ├── README.md
+│   └── rounds/                       # Saved OpenEvolve artifacts (best / checkpoints / logs)
+│       ├── round_1_cloud_openevolve_output/
+│       ├── round_2_local_openevolve_output/
+│       ├── round_3_local_openevolve_output/
+│       ├── round_4_local_openevolve_output/
+│       ├── round_5_local_openevolve_output/
+│       └── round_7_local_openevolve_output/
 ├── tests/                            # pytest contract suite
 └── scripts/                          # Helper scripts (report generation, post-edit hooks)
 ```
