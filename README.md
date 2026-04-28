@@ -166,10 +166,10 @@ variable. The default is `initial_program.py`:
 task eval:holdout
 
 # evaluate an evolved candidate (path is illustrative)
-CANDIDATE=round_1_cloud_openevolve_output/best/best_program.py task eval:holdout
+CANDIDATE=experiments/rounds/round_1_cloud_openevolve_output/best/best_program.py task eval:holdout
 
 # evaluate a checkpoint
-CANDIDATE=round_2_local_openevolve_output/checkpoints/checkpoint_5/best_program.py task eval:train
+CANDIDATE=experiments/rounds/round_2_local_openevolve_output/checkpoints/checkpoint_5/best_program.py task eval:train
 ```
 
 Save train + holdout JSON for a candidate in one shot:
