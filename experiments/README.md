@@ -5,9 +5,9 @@ This directory contains selected OpenEvolve run artifacts used by the case study
 The main analysis lives in:
 
 - [../README.md](../README.md)
-- [../docs/EXPERIMENTS.md](../docs/EXPERIMENTS.md)
-- [../docs/HOLDOUT_ANALYSIS.md](../docs/HOLDOUT_ANALYSIS.md)
-- [../docs/FINAL_REPORT.md](../docs/FINAL_REPORT.md)
+- [../EXPERIMENTS.md](../EXPERIMENTS.md)
+- [../docs/reports/HOLDOUT_ANALYSIS.md](../docs/reports/HOLDOUT_ANALYSIS.md)
+- [../docs/reports/FINAL_REPORT.md](../docs/reports/FINAL_REPORT.md)
 
 ## Rounds
 
