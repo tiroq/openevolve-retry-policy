@@ -80,7 +80,7 @@ Three layers, all in the evaluator:
 
 Train drives the search; holdout is held back for generalization checks.
 Acceptance is **constraint-first** — see
-[ACCEPTANCE_CRITERIA.md](../../ACCEPTANCE_CRITERIA.md).
+[ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md).
 
 ## 5. Experiment rounds
 

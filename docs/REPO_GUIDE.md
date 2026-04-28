@@ -22,7 +22,7 @@ profile, or article and want to find the substance quickly.
 
 - [docs/reports/FINAL_REPORT.md](reports/FINAL_REPORT.md) — polished
   case-study summary.
-- [ACCEPTANCE_CRITERIA.md](../ACCEPTANCE_CRITERIA.md) — hard, behavioral,
+- [ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md) — hard, behavioral,
   and holdout gates.
 - [docs/MODEL_FAILURE_MODES.md](MODEL_FAILURE_MODES.md) — observed LLM
   failure modes and defenses.

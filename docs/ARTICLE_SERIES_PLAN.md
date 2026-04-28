@@ -32,7 +32,7 @@ Each entry below is an outline, not a finished post.
   acceptance gates contain more engineering value than any single
   candidate.
 - **Repo artifacts.** [evaluator.py](../evaluator.py),
-  [ACCEPTANCE_CRITERIA.md](../ACCEPTANCE_CRITERIA.md),
+  [ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md),
   [scenarios.py](../scenarios.py).
 - **Charts/tables.** Metric breakdown table; safety counters.
 - **Conclusion.** Spend your engineering budget on the evaluator first.
@@ -66,7 +66,7 @@ Each entry below is an outline, not a finished post.
 - **Audience.** QA automation engineers, SDETs.
 - **Thesis.** Acceptance for AI-generated code looks a lot like a good
   QA test plan: hard gates, behavioral checks, regression detection.
-- **Repo artifacts.** [ACCEPTANCE_CRITERIA.md](../ACCEPTANCE_CRITERIA.md),
+- **Repo artifacts.** [ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md),
   [tests/test_policy_contract.py](../tests/test_policy_contract.py).
 - **Charts/tables.** Gate hierarchy diagram; rejection-rule table.
 - **Conclusion.** QA discipline is the bottleneck for trustworthy

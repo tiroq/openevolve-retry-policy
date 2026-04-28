@@ -62,5 +62,5 @@ Concretely, in this repo:
 - Holdout `success_rate` must not regress materially.
 - Combined score is one signal among many, not the deciding one.
 
-See [ACCEPTANCE_CRITERIA.md](../../ACCEPTANCE_CRITERIA.md) for the full
+See [ACCEPTANCE_CRITERIA.md](../ACCEPTANCE_CRITERIA.md) for the full
 gate list and rejection rules.
