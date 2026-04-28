@@ -309,6 +309,7 @@ Highlights:
 ## 19. Case study documents
 
 - [EXPERIMENTS.md](EXPERIMENTS.md) — experiment journal
+- [Experiment artifacts](experiments/README.md) — curated index of committed OpenEvolve run outputs.
 - [ACCEPTANCE_CRITERIA.md](ACCEPTANCE_CRITERIA.md) — hard, behavioral, and holdout gates
 - [LESSONS_LEARNED.md](LESSONS_LEARNED.md) — distilled lessons
 - [docs/POSITIONING.md](docs/POSITIONING.md) — how this maps to QA / reliability work
