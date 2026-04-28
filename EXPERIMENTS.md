@@ -75,7 +75,7 @@ and never crashes, but it leaves substantial headroom in `success_rate` and
 
 These rows describe the *shape* of what was observed, not formally
 reproducible results. Logs and best-program artifacts for several rounds
-are committed under `round_*_openevolve_output/`.
+are committed under `experiments/rounds/round_*_openevolve_output/`.
 
 ## 5. Candidate examples
 
