@@ -329,5 +329,4 @@ patterns to fintech protocol testing and AI-assisted QA tooling.
 
 ## 21. License
 
-See [LICENSE](LICENSE) if present, otherwise treat as personal case-study
-material. External code (OpenEvolve, model weights) retains its own license.
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
